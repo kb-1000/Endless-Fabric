@@ -10,6 +10,9 @@ classes/
 *.ipr
 *.iws
 
+# eclipse
+.metadata/
+
 #vscode
 .settings/
 .vscode/
