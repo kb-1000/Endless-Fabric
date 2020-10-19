@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "endless_fabric",
+  "version": "${version}",
+  "name": "Endless",
+  "description": "An End Expansion aiming to add more wackyness to the End Dimension!",
+  "authors": [
+    "ReMod Studios"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/endless_fabric/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.remodstudios.endless.endless"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.1.0.48",
+    "fabric": "*"
+  }
+}
