@@ -17,9 +17,6 @@ public class Endless implements ModInitializer {
 
     public static Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
-    //item instances
-    public static final Item TOPAZ_GEM = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
