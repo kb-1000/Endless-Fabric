@@ -12,6 +12,7 @@ classes/
 
 # eclipse
 .metadata/
+.eclipse/
 
 #vscode
 .settings/
@@ -22,3 +23,6 @@ bin/
 
 #fabric
 run/
+
+# macOS becuase hello YTG is here
+.*_*

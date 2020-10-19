@@ -7,19 +7,23 @@
   "authors": [
     "ReMod Studios"
   ],
-  "contributors": [],
+  "contributors": [
+    "YTG1234"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/endless_fabric/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.remodstudios.endless.endless"
+      "com.remodstudios.endless_fabric.Endless"
     ],
     "client": [],
     "server": []
   },
-  "mixins": [],
+  "mixins": [
+    "endless_fabric.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.1.0.48",
     "fabric": "*"
