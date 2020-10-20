@@ -18,7 +18,9 @@
     "main": [
       "com.remodstudios.endless_fabric.Endless"
     ],
-    "client": [],
+    "client": [
+      "com.remodstudios.endless_fabric.client.EndlessClient"
+    ],
     "server": []
   },
   "mixins": [
