@@ -12,6 +12,7 @@ import static net.minecraft.block.Blocks.END_STONE;
 /**
  * A class handling registration and definition of Endless' blocks.
  *
+ * @author YTG1234
  * @author LePichu
  */
 public final class EndlessModBlocks {
