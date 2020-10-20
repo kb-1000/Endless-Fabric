@@ -34,6 +34,7 @@ public class Endless implements ModInitializer {
         // haha yes pichu smol and not best
         log(Level.INFO, "Registering Endless' Items...");
         EndlessModItems.registerItems();
+        log(Level.INFO, "Registering Endless' Blocks...");
         EndlessModBlocks.registerBlocks();
     }
 

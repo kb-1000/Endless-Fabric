@@ -13,10 +13,8 @@ import net.minecraft.util.registry.Registry;
  * @author YTG1234
  */
 public final class EndlessModItems {
-    //instances
     public static final Item TOPAZ_GEM;
 
-    //item settings
     static {
         TOPAZ_GEM = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     }
@@ -28,7 +26,6 @@ public final class EndlessModItems {
      * Registers all of the mod's items.
      */
     public static void registerItems() {
-        //registry
         Registry.register(Registry.ITEM, new Identifier(Endless.MOD_ID, "topaz_gem"), TOPAZ_GEM);
     }
 }
