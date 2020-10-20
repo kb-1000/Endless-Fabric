@@ -1,5 +1,6 @@
 {
-  "item.endless_fabric.topaz_gem":"Topaz Gem",
-  // ores
-  "block.endless_fabric.topaz_ore":"Topaz Ore"
+  "item.endless_fabric.topaz_gem": "Topaz Gem",
+
+  "_comment": "Blocks",
+  "block.endless_fabric.topaz_ore": "Topaz Ore"
 }
