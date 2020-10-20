@@ -1,6 +1,8 @@
 package com.remodstudios.endless_fabric;
 
 import com.remodstudios.endless_fabric.common.register.EndlessModItems;
+import com.remodstudios.endless_fabric.common.register.EndlessModBlocks;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -32,6 +34,7 @@ public class Endless implements ModInitializer {
         // haha yes pichu smol and not best
         log(Level.INFO, "Registering Endless' Items...");
         EndlessModItems.registerItems();
+        EndlessModBlocks.registerBlocks();
     }
 
     /**

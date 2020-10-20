@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "endless_fabric",
   "version": "${version}",
-  "name": "Endless",
+  "name": "Endless - Fabric Edition",
   "description": "An End Expansion aiming to add more wackyness to the End Dimension!",
   "authors": [
     "ReMod Studios"
