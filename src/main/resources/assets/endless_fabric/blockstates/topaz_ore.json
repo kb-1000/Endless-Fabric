@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": "endless_fabric:block/topaz_ore"
+    "": {
+      "model": "endless_fabric:block/topaz_ore"
+    }
   }
 }
