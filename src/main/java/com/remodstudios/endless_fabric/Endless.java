@@ -2,6 +2,7 @@ package com.remodstudios.endless_fabric;
 
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
 import com.remodstudios.endless_fabric.item.EndlessModItems;
+import com.remodstudios.endless_fabric.world.feature.EndlessModFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
@@ -17,5 +18,6 @@ public class Endless implements ModInitializer {
         LOGGER.info("Initializing Endless");
         EndlessModItems.init();
         EndlessModBlocks.init();
+        EndlessModFeatures.init();
     }
 }
