@@ -1,50 +1,21 @@
 package com.remodstudios.endless_fabric;
 
-import com.remodstudios.endless_fabric.common.register.EndlessModItems;
-import com.remodstudios.endless_fabric.common.register.EndlessModBlocks;
-
+import com.remodstudios.endless_fabric.block.EndlessModBlocks;
+import com.remodstudios.endless_fabric.item.EndlessModItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import org.apache.logging.log4j.Level;
+import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * The common initializer of Endless.
- *
- * @author LePichu
- * @author YTG1234
- */
 public class Endless implements ModInitializer {
     public static final String MOD_ID = "endless_fabric";
-    public static final String MOD_NAME = "Endless";
+    public static final String MOD_NAME = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(IllegalStateException::new).getMetadata().getName();
+    public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
-    public static Logger LOGGER = LogManager.getLogger(MOD_NAME);
-
-    /**
-     * Initializes mod and registers items.
-     */
     @Override
     public void onInitialize() {
-        log(Level.INFO, "Initializing");
-        // haha yes pichu smol and not best
-        log(Level.INFO, "Registering Endless' Items...");
-        EndlessModItems.registerItems();
-        log(Level.INFO, "Registering Endless' Blocks...");
-        EndlessModBlocks.registerBlocks();
+        LOGGER.info("Initializing Endless");
+        EndlessModItems.init();
+        EndlessModBlocks.init();
     }
-
-    /**
-     * Logs a message to the console with this mod's logger.
-     * @param level The {@linkplain Level log level} to log the message in.
-     * @param message The message to log.
-     */
-    public static void log(Level level, String message){
-        LOGGER.log(level, message);
-    }
-
 }
