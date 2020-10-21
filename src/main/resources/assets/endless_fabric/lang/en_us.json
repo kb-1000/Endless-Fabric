@@ -1,11 +1,6 @@
 {
-  "_comment1": "Items Below",
-
   "item.endless_fabric.topaz_gem": "Topaz Gem",
-  "item.endless_fabric.finallium_shards": "Finallium Shards",
-
-  "_comment2": "Blocks Below",
-
+  "item.endless_fabric.finallium_shard": "Finallium Shard",
   "block.endless_fabric.topaz_ore": "Topaz Ore",
   "block.endless_fabric.finallium_ore": "Finallium Ore"
 }
