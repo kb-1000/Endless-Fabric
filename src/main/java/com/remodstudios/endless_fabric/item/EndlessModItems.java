@@ -11,7 +11,8 @@ import net.minecraft.util.registry.Registry;
 
 @SuppressWarnings("unused")
 public class EndlessModItems {
-    public static final Item TOPAZ_GEM = register(new Item(new Item.Settings().group(ItemGroup.MISC)), "topaz_gen");
+    public static final Item TOPAZ_GEM = register(new Item(new Item.Settings().group(ItemGroup.MISC)), "topaz_gem");
+    public static final Item FINALLIUM_SHARD = register(new Item(new Item.Settings().group(ItemGroup.MISC)), "finallium_shard");
     public static final Item TOPAZ_ORE = register(EndlessModBlocks.TOPAZ_ORE, "topaz_ore", new Item.Settings().group(ItemGroup.MISC));
     public static final Item FINALLIUM_ORE = register(EndlessModBlocks.FINALLIUM_ORE, "finallium_ore", new Item.Settings().group(ItemGroup.MISC));
 
