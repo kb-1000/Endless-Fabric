@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import com.google.common.collect.ImmutableList;
 import com.remodstudios.endless_fabric.Endless;
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
 import com.remodstudios.endless_fabric.mixin.GenerationSettingsAccessor;
@@ -34,8 +35,20 @@ public class EndlessModFeatures {
                                .filter(biome -> biome.getCategory().equals(Biome.Category.THEEND))
                                .forEach(biome -> {
                                    List<List<Supplier<ConfiguredFeature<?, ?>>>> features  = new ArrayList<>(biome.getGenerationSettings().getFeatures());
-                                   List<Supplier<ConfiguredFeature<?, ?>>> ores = new ArrayList<>(features.get(GenerationStep.Feature.UNDERGROUND_ORES.ordinal()));
-                                   features.set(GenerationStep.Feature.UNDERGROUND_ORES.ordinal(), ores);
+                                   List<Supplier<ConfiguredFeature<?, ?>>> ores;
+                                   try {
+                                       ores = new ArrayList<>(features.get(GenerationStep.Feature.UNDERGROUND_ORES.ordinal()));
+                                   } catch (RuntimeException e) {
+                                       ores = new ArrayList<>();
+                                   }
+                                   try {
+                                       features.set(GenerationStep.Feature.UNDERGROUND_ORES.ordinal(), ores);
+                                   } catch (RuntimeException e) {
+                                       while (features.size() < GenerationStep.Feature.UNDERGROUND_ORES.ordinal()) {
+                                           features.add(ImmutableList.of());
+                                       }
+                                       features.add(GenerationStep.Feature.UNDERGROUND_ORES.ordinal(), ores);
+                                   }
                                    ores.add(() -> TOPAZ_ORE);
                                    ores.add(() -> FINALLIUM_ORE);
                                    ((GenerationSettingsAccessor) biome.getGenerationSettings()).setFeatures(features);
