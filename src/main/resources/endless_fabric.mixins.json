@@ -4,6 +4,7 @@
   "package": "com.remodstudios.endless_fabric.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BucketItemAccessor",
     "GenerationSettingsAccessor"
   ],
   "client": [],

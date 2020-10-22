@@ -1,10 +1,18 @@
 package com.remodstudios.endless_fabric.block;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.ImmutableBiMap;
+import com.remodstudios.endless_fabric.fluid.EndlessModFluids;
+import com.remodstudios.endless_fabric.mixin.BucketItemAccessor;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CauldronBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.item.BucketItem;
+import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.ActionResult;
@@ -27,6 +35,14 @@ public class FluidCauldronBlock extends CauldronBlock {
 
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+		Item handItem = player.getStackInHand(hand).getItem();
+		if (handItem instanceof BucketItem && handItem instanceof BucketItemAccessor) {
+			if (EndlessModFluids.CAULDRON_FLUIDS.contains(((BucketItemAccessor) handItem).getFluid())) {
+				world.setBlockState(pos, state.with(FLUID_TYPE, FluidType.valueOf(((BucketItemAccessor) handItem).getFluid())).with(LEVEL, 3));
+				return ActionResult.SUCCESS;
+			}
+			return ActionResult.CONSUME;
+		}
 		return ActionResult.PASS;
 	}
 
@@ -37,15 +53,18 @@ public class FluidCauldronBlock extends CauldronBlock {
 	}
 
 	public enum FluidType implements StringIdentifiable {
-		NONE("none", false),
-		MOLTEN_TOPAZ("molten_topaz", true);
+		NONE("none", false, null),
+		MOLTEN_TOPAZ("molten_topaz", true, EndlessModFluids.MOLTEN_TOPAZ);
 
+		private static final BiMap<Fluid, FluidType> FLUID_MAP;
 		private final String name;
 		private final boolean lit;
+		private final Fluid fluid;
 
-		FluidType(String name, boolean lit) {
+		FluidType(String name, boolean lit, Fluid fluid) {
 			this.name = name;
 			this.lit = lit;
+			this.fluid = fluid;
 		}
 
 		@Override
@@ -53,8 +72,24 @@ public class FluidCauldronBlock extends CauldronBlock {
 			return this.name;
 		}
 
+		public Fluid getFluid() {
+			return this.fluid;
+		}
+
 		public boolean isLit() {
 			return this.lit;
+		}
+
+		public static FluidType valueOf(Fluid fluid) {
+			return FLUID_MAP.get(fluid);
+		}
+
+		static {
+			ImmutableBiMap.Builder<Fluid, FluidType> builder = ImmutableBiMap.builder();
+			for (FluidType type : values()) {
+				builder.put(type.getFluid(), type);
+			}
+			FLUID_MAP = builder.build();
 		}
 	}
 }
