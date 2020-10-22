@@ -1,6 +1,5 @@
 package datagen;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -76,6 +75,6 @@ public class Generator {
         if (!Files.exists(path)) {
             Files.createFile(path);
         }
-        Files.write(path, data.getBytes())
+        Files.write(path, data.getBytes());
     }
 }
