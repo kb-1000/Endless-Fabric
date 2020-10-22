@@ -51,7 +51,7 @@ public class Generator {
     // IMPORTANT
     // Make sure the working directory is the project root folder
     // Ensure that it is not set the 'run' directory
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         try (Scanner s = new Scanner(System.in)) {
             System.out.println("Enter the name of the block");
             String name = s.next();
@@ -65,7 +65,17 @@ public class Generator {
             Path blockModelPath = assetsDir.resolve("models").resolve("block").resolve(name + ".json");
             Path blockitemModelPath = assetsDir.resolve("models").resolve("item").resolve(name + ".json");
             Path lootTablePath = root.resolve("src").resolve("main").resolve("resources").resolve("data").resolve("endless_fabric").resolve("loot_tables").resolve("blocks").resolve(name + ".json");
-            Files.write(blockstatePath)
+            write(blockstatePath, blockstate);
+            write(blockModelPath, blockModel);
+            write(blockitemModelPath, blockitemModel);
+            write(lootTablePath, lootTable);
         }
+    }
+
+    private static void write(Path path, String data) throws IOException {
+        if (!Files.exists(path)) {
+            Files.createFile(path);
+        }
+        Files.write(path, data.getBytes())
     }
 }
