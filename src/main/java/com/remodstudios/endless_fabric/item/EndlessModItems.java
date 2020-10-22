@@ -2,9 +2,11 @@ package com.remodstudios.endless_fabric.item;
 
 import com.remodstudios.endless_fabric.Endless;
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
+import com.remodstudios.endless_fabric.fluid.EndlessModFluids;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -19,6 +21,7 @@ public class EndlessModItems {
     public static final Item PHAZED_VOID = register(EndlessModBlocks.PHAZED_VOID, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
     public static final Item RUSTED_IRON_BLOCK = register(EndlessModBlocks.RUSTED_IRON_BLOCK, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
     public static final Item TOPAZ_BLOCK = register(EndlessModBlocks.TOPAZ_BLOCK, "topaz_block", new Item.Settings().group(ItemGroup.MISC));
+    public static final Item MOLTEN_TOPAZ_BUCKET = register(new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings().group(ItemGroup.MISC)), "molten_topaz_bucket");
 
     private static Item register(Item item, String name) {
         return Registry.register(Registry.ITEM, new Identifier(Endless.MOD_ID, name), item);
