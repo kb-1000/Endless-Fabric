@@ -1,6 +1,7 @@
 package com.remodstudios.endless_fabric;
 
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
+import com.remodstudios.endless_fabric.block.entity.EndlessModBlockEntityTypes;
 import com.remodstudios.endless_fabric.fluid.EndlessModFluids;
 import com.remodstudios.endless_fabric.item.EndlessModItems;
 import com.remodstudios.endless_fabric.world.feature.EndlessModFeatures;
@@ -20,6 +21,7 @@ public class Endless implements ModInitializer {
         LOGGER.info("Initializing Endless");
         EndlessModItems.init();
         EndlessModBlocks.init();
+		EndlessModBlockEntityTypes.init();
         EndlessModFeatures.init();
 		EndlessModFluids.init();
     }

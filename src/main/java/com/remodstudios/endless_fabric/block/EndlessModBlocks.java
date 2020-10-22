@@ -26,6 +26,7 @@ public class EndlessModBlocks {
 		}
     	return 0;
 	})), "fluid_cauldron");
+    public static final Block BEACON_OF_UNDYING = register(new BeaconOfUndyingBlock(FabricBlockSettings.copyOf(Blocks.BEACON)), "beacon_of_undying");
 
     private static Block register(Block block, String name) {
         return Registry.register(Registry.BLOCK, new Identifier(Endless.MOD_ID, name), block);
