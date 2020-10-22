@@ -1,3 +1,36 @@
 {
-
+  "multipart": [
+    {
+      "apply": {
+        "model": "endless_fabric:block/cauldron/cauldron_base"
+      }
+    },
+    {
+      "when": {
+        "level": 1,
+        "fluid": "molten_topaz"
+      },
+      "apply": {
+        "model": "endless_fabric:block/cauldron/molten_topaz/level_1"
+      }
+    },
+    {
+      "when": {
+        "level": 22,
+        "fluid": "molten_topaz"
+      },
+      "apply": {
+        "model": "endless_fabric:block/cauldron/molten_topaz/level_2"
+      }
+    },
+    {
+      "when": {
+        "level": 3,
+        "fluid": "molten_topaz"
+      },
+      "apply": {
+        "model": "endless_fabric:block/cauldron/molten_topaz/level_3"
+      }
+    }
+  ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "endless_fabric:block/cauldron/fluid_level_2",
+  "textures": {
+    "fluid": "endless_fabric:block/molten_topaz_still"
+  }
+}
