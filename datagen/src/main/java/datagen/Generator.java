@@ -61,7 +61,7 @@ public class Generator {
     // IMPORTANT
     // Make sure the working directory is the project root folder
     // Ensure that it is not set the 'run' directory
-    public static void generate(String name) throws IOException {
+    private static void generate(String name) throws IOException {
         long start = System.currentTimeMillis();
         System.out.println("Generating resources for block: " + name);
         String blockstate = String.format(DEFAULT_BLOCKSTATE, name);
