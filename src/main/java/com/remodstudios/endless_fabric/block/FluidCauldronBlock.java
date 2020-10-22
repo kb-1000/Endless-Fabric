@@ -3,7 +3,6 @@ package com.remodstudios.endless_fabric.block;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import com.remodstudios.endless_fabric.fluid.EndlessModFluids;
-import com.remodstudios.endless_fabric.item.EndlessModItems;
 import com.remodstudios.endless_fabric.mixin.BucketItemAccessor;
 
 import net.minecraft.block.Block;
@@ -14,7 +13,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;

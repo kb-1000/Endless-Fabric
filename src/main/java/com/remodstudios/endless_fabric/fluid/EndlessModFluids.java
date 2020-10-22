@@ -2,7 +2,6 @@ package com.remodstudios.endless_fabric.fluid;
 
 import java.util.Set;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.remodstudios.endless_fabric.Endless;
 
