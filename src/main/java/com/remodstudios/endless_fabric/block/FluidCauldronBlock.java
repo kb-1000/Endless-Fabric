@@ -38,6 +38,7 @@ public class FluidCauldronBlock extends CauldronBlock {
 	}
 
 	public enum FluidType implements StringIdentifiable {
+		NONE("none"),
 		MOLTEN_TOPAZ("molten_topaz");
 
 		private final String name;
