@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.StringIdentifiable;
@@ -16,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class FluidCauldronBlock extends CauldronBlock {
-	private static final Property<?> FLUID_TYPE = EnumProperty.of("fluid", FluidType.class);
+	public static final EnumProperty<FluidType> FLUID_TYPE = EnumProperty.of("fluid", FluidType.class);
 
 	public FluidCauldronBlock(Settings settings) {
 		super(settings);
@@ -38,18 +37,24 @@ public class FluidCauldronBlock extends CauldronBlock {
 	}
 
 	public enum FluidType implements StringIdentifiable {
-		NONE("none"),
-		MOLTEN_TOPAZ("molten_topaz");
+		NONE("none", false),
+		MOLTEN_TOPAZ("molten_topaz", true);
 
 		private final String name;
+		private final boolean lit;
 
-		FluidType(String name) {
+		FluidType(String name, boolean lit) {
 			this.name = name;
+			this.lit = lit;
 		}
 
 		@Override
 		public String asString() {
 			return this.name;
+		}
+
+		public boolean isLit() {
+			return this.lit;
 		}
 	}
 }

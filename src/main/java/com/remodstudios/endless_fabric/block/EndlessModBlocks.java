@@ -20,7 +20,12 @@ public class EndlessModBlocks {
     public static final Block PHAZED_VOID = register(new Block(FabricBlockSettings.of(new FabricMaterialBuilder(MaterialColor.BLUE_TERRACOTTA).notSolid().allowsMovement().build()).breakByTool(FabricToolTags.SHEARS).sounds(BlockSoundGroup.GLASS)), "phazed_void");
     public static final Block TOPAZ_BLOCK = register(new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE)),"topaz_block");
     public static final Block MOLTEN_TOPAZ = register(new MoltenTopazFluidBlock(FabricBlockSettings.copyOf(Blocks.LAVA)), "molten_topaz");
-    public static final Block FLUID_CAULDRON = register(new FluidCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)), "fluid_cauldron");
+    public static final Block FLUID_CAULDRON = register(new FluidCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON).lightLevel(state -> {
+    	if (state.get(FluidCauldronBlock.FLUID_TYPE).isLit()) {
+			return 15;
+		}
+    	return 0;
+	})), "fluid_cauldron");
 
     private static Block register(Block block, String name) {
         return Registry.register(Registry.BLOCK, new Identifier(Endless.MOD_ID, name), block);

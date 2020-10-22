@@ -16,5 +16,6 @@ public class EndlessModFluids {
 	}
 
 	public static void init() {
+		// just loads the class
 	}
 }
