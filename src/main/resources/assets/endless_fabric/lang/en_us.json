@@ -1,6 +1,7 @@
 {
-  "item.endless_fabric.topaz_gem": "Topaz Gem",
-  "item.endless_fabric.finallium_shard": "Finallium Shard",
-  "block.endless_fabric.topaz_ore": "Topaz Ore",
-  "block.endless_fabric.finallium_ore": "Finallium Ore"
+  "item.endless_fabric.topaz_gem": "Topaz gem",
+  "item.endless_fabric.finallium_shard": "Finallium shard",
+  "block.endless_fabric.topaz_ore": "Topaz ore",
+  "block.endless_fabric.finallium_ore": "Finallium ore",
+  "block.endless_fabric.phazed_void": "Phazed void"
 }

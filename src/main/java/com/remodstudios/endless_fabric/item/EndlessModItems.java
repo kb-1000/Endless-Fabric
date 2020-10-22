@@ -15,6 +15,7 @@ public class EndlessModItems {
     public static final Item FINALLIUM_SHARD = register(new Item(new Item.Settings().group(ItemGroup.MISC)), "finallium_shard");
     public static final Item TOPAZ_ORE = register(EndlessModBlocks.TOPAZ_ORE, "topaz_ore", new Item.Settings().group(ItemGroup.MISC));
     public static final Item FINALLIUM_ORE = register(EndlessModBlocks.FINALLIUM_ORE, "finallium_ore", new Item.Settings().group(ItemGroup.MISC));
+    public static final Item PHAZED_VOID = register(EndlessModBlocks.PHAZED_VOID, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
 
     private static Item register(Item item, String name) {
         return Registry.register(Registry.ITEM, new Identifier(Endless.MOD_ID, name), item);
