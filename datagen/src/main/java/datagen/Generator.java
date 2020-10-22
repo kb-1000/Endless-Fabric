@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
+@SuppressWarnings("TextBlockMigration")
 public class Generator {
     private static final String DEFAULT_BLOCKSTATE = "{\n" +
                                                      "  \"variants\": {\n" +
