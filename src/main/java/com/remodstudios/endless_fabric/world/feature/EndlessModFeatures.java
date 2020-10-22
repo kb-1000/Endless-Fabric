@@ -1,9 +1,14 @@
 package com.remodstudios.endless_fabric.world.feature;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
 import com.google.common.collect.ImmutableList;
 import com.remodstudios.endless_fabric.Endless;
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
 import com.remodstudios.endless_fabric.mixin.GenerationSettingsAccessor;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.Identifier;
@@ -16,10 +21,6 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
 
 public class EndlessModFeatures {
     public static final ConfiguredFeature<?, ?> TOPAZ_ORE = register("topaz_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.TOPAZ_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));

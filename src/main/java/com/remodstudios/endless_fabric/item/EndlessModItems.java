@@ -2,6 +2,7 @@ package com.remodstudios.endless_fabric.item;
 
 import com.remodstudios.endless_fabric.Endless;
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

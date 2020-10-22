@@ -3,10 +3,11 @@ package com.remodstudios.endless_fabric;
 import com.remodstudios.endless_fabric.block.EndlessModBlocks;
 import com.remodstudios.endless_fabric.item.EndlessModItems;
 import com.remodstudios.endless_fabric.world.feature.EndlessModFeatures;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 
 public class Endless implements ModInitializer {
     public static final String MOD_ID = "endless_fabric";
