@@ -3,6 +3,7 @@ package com.remodstudios.endless_fabric.block;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import com.remodstudios.endless_fabric.fluid.EndlessModFluids;
+import com.remodstudios.endless_fabric.item.EndlessModItems;
 import com.remodstudios.endless_fabric.mixin.BucketItemAccessor;
 
 import net.minecraft.block.Block;
@@ -13,6 +14,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.ActionResult;
@@ -27,6 +30,7 @@ public class FluidCauldronBlock extends CauldronBlock {
 
 	public FluidCauldronBlock(Settings settings) {
 		super(settings);
+		this.setDefaultState(this.getDefaultState().with(FLUID_TYPE, FluidType.NONE));
 	}
 
 	@Override
@@ -36,6 +40,10 @@ public class FluidCauldronBlock extends CauldronBlock {
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		Item handItem = player.getStackInHand(hand).getItem();
+		if (this.hasFluid(state, 3) && handItem == Items.BUCKET) {
+			player.setStackInHand(hand, state.get(FLUID_TYPE).getFluid().getBucketItem().getDefaultStack());
+			return ActionResult.SUCCESS;
+		}
 		if (handItem instanceof BucketItem && handItem instanceof BucketItemAccessor) {
 			if (EndlessModFluids.CAULDRON_FLUIDS.contains(((BucketItemAccessor) handItem).getFluid())) {
 				world.setBlockState(pos, state.with(FLUID_TYPE, FluidType.valueOf(((BucketItemAccessor) handItem).getFluid())).with(LEVEL, 3));
@@ -50,6 +58,10 @@ public class FluidCauldronBlock extends CauldronBlock {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		builder.add(FLUID_TYPE);
 		super.appendProperties(builder);
+	}
+
+	private boolean hasFluid(BlockState state, int level) {
+		return state.get(FLUID_TYPE) != FluidType.NONE && state.get(LEVEL) == level;
 	}
 
 	public enum FluidType implements StringIdentifiable {
