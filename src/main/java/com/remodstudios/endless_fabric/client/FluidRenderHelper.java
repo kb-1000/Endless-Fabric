@@ -17,6 +17,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockRenderView;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
@@ -24,8 +26,9 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 
+@Environment(EnvType.CLIENT)
 public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSynchronousResourceReloadListener, FluidRenderHandler {
-	MOLTEN_TOPAZ("molten_topaz", EndlessModFluids.MOLTEN_TOPAZ, EndlessModFluids.FLOWING_MOLTEN_TOPAZ);
+	MOLTEN_TOPAZ("molten_topaz", EndlessModFluids.MOLTEN_TOPAZ, EndlessModFluids.FLOWING_MOLTEN_TOPAZ, 0xFFFF00);
 
 	private final String name;
 	private final Identifier stillSpriteId;
@@ -33,13 +36,15 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 	private final FlowableFluid still;
 	private final FlowableFluid flowing;
 	private final Sprite[] fluidSprites = {null, null};
+	private final int color;
 
-	FluidRenderHelper(String name, FlowableFluid still, FlowableFluid flowing) {
+	FluidRenderHelper(String name, FlowableFluid still, FlowableFluid flowing, int color) {
 		this.name = name;
 		this.stillSpriteId = new Identifier("endless_fabric", String.format("block/%s_still", name));
 		this.flowingSpriteId = new Identifier("endless_fabric", String.format("block/%s_flow", name));
 		this.still = still;
 		this.flowing = flowing;
+		this.color = color;
 	}
 
 	public void init() {
@@ -75,6 +80,6 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 
 	@Override
 	public int getFluidColor(BlockRenderView view, BlockPos pos, FluidState state) {
-		return 0xFFFF00;
+		return this.color;
 	}
 }
