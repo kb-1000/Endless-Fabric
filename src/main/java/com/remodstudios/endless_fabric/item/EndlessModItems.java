@@ -19,7 +19,7 @@ public class EndlessModItems {
     public static final Item TOPAZ_ORE = register(EndlessModBlocks.TOPAZ_ORE, "topaz_ore", new Item.Settings().group(ItemGroup.MISC));
     public static final Item FINALLIUM_ORE = register(EndlessModBlocks.FINALLIUM_ORE, "finallium_ore", new Item.Settings().group(ItemGroup.MISC));
     public static final Item PHAZED_VOID = register(EndlessModBlocks.PHAZED_VOID, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
-    public static final Item RUSTED_IRON_BLOCK = register(EndlessModBlocks.RUSTED_IRON_BLOCK, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
+    public static final Item RUSTED_IRON_BLOCK = register(EndlessModBlocks.RUSTED_IRON_BLOCK, "rusted_iron_block", new Item.Settings().group(ItemGroup.MISC));
     public static final Item TOPAZ_BLOCK = register(EndlessModBlocks.TOPAZ_BLOCK, "topaz_block", new Item.Settings().group(ItemGroup.MISC));
     public static final Item MOLTEN_TOPAZ_BUCKET = register(new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings().group(ItemGroup.MISC)), "molten_topaz_bucket");
 
