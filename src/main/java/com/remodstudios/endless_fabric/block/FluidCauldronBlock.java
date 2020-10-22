@@ -11,6 +11,7 @@ import net.minecraft.block.CauldronBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -38,13 +39,17 @@ public class FluidCauldronBlock extends CauldronBlock {
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		Item handItem = player.getStackInHand(hand).getItem();
-		if (this.hasFluid(state, 3) && handItem == Items.BUCKET) {
+		if (this.isFilled(state) && this.hasLevel(state, 3) && handItem == Items.BUCKET) {
 			player.setStackInHand(hand, state.get(FLUID_TYPE).getFluid().getBucketItem().getDefaultStack());
 			return ActionResult.SUCCESS;
 		}
 		if (handItem instanceof BucketItem && handItem instanceof BucketItemAccessor) {
+			if (this.isFilled(state) || !this.hasLevel(state, 0)) {
+				return ActionResult.CONSUME;
+			}
 			if (EndlessModFluids.CAULDRON_FLUIDS.contains(((BucketItemAccessor) handItem).getFluid())) {
 				world.setBlockState(pos, state.with(FLUID_TYPE, FluidType.valueOf(((BucketItemAccessor) handItem).getFluid())).with(LEVEL, 3));
+				player.setStackInHand(hand, Items.BUCKET.getDefaultStack());
 				return ActionResult.SUCCESS;
 			}
 			return ActionResult.CONSUME;
@@ -58,12 +63,16 @@ public class FluidCauldronBlock extends CauldronBlock {
 		super.appendProperties(builder);
 	}
 
-	private boolean hasFluid(BlockState state, int level) {
-		return state.get(FLUID_TYPE) != FluidType.NONE && state.get(LEVEL) == level;
+	private boolean hasLevel(BlockState state, int level) {
+		return state.get(LEVEL) == level;
+	}
+
+	private boolean isFilled(BlockState state) {
+		return state.get(FLUID_TYPE) != FluidType.NONE;
 	}
 
 	public enum FluidType implements StringIdentifiable {
-		NONE("none", false, null),
+		NONE("none", false, Fluids.EMPTY),
 		MOLTEN_TOPAZ("molten_topaz", true, EndlessModFluids.MOLTEN_TOPAZ);
 
 		private static final BiMap<Fluid, FluidType> FLUID_MAP;
