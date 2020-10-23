@@ -16,8 +16,8 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name = "Fabric"
-		url = "https://maven.fabricmc.net/"
+		name = "CottonMC"
+		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
 }
 
@@ -26,11 +26,15 @@ minecraft {
 
 dependencies {
 	// To change the versions see the gradle.properties file
-	minecraft("com.mojang:minecraft:${project.minecraft_version}")
-	mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
-	modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
-
-	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}")
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	modImplementation "io.github.cottonmc:LibGui:${project.libgui_version}"
+	modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") {
+		exclude module: 'fabric-api'
+	}
+	compileOnly "com.google.code.findbugs:jsr305:3.0.2"
 }
 
 processResources {

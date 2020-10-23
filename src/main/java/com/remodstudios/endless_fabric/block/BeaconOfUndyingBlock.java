@@ -4,7 +4,6 @@ import com.remodstudios.endless_fabric.block.entity.BeaconOfUndyingBlockEntity;
 
 import net.minecraft.block.BeaconBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,7 +31,7 @@ public class BeaconOfUndyingBlock extends BeaconBlock {
 		if (itemStack.hasCustomName()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
 			if (blockEntity instanceof BeaconOfUndyingBlockEntity) {
-				((BeaconOfUndyingBlockEntity) blockEntity).setCustomName(itemStack.getName());
+				((BeaconOfUndyingBlockEntity) blockEntity).setDisplayName(itemStack.getName());
 			}
 		}
 	}

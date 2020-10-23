@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
 public class BeaconOfUndyingBlockEntity extends BlockEntity implements NamedScreenHandlerFactory {
-	private Text customName = new TranslatableText("screen_handler.endless.beacon_of_undying");
+	private Text displayName = new TranslatableText("block.endless_fabric.beacon_of_undying\"");
 
 	public BeaconOfUndyingBlockEntity() {
 		super(EndlessModBlockEntityTypes.BEACON_OF_UNDYING);
@@ -19,11 +19,11 @@ public class BeaconOfUndyingBlockEntity extends BlockEntity implements NamedScre
 
 	@Override
 	public Text getDisplayName() {
-		return this.customName;
+		return this.displayName;
 	}
 
-	public void setCustomName(Text text) {
-		this.customName = text;
+	public void setDisplayName(Text text) {
+		this.displayName = text;
 	}
 
 	@Override
