@@ -9,8 +9,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import net.fabricmc.fabric.api.tag.TagRegistry;
 
 @SuppressWarnings("unused")
 public class EndlessModItems {
@@ -33,6 +36,14 @@ public class EndlessModItems {
     }
 
     public static void init() {
-        // just loads the class
+        Tags.init();
     }
+
+    public static class Tags {
+    	public static final Tag<Item> BEACON_OF_UNDYING_PAYMENT_ITEMS = TagRegistry.item(new Identifier(Endless.MOD_ID, "beacon_of_undying_payment_items"));
+
+    	public static void init() {
+    		// just loads the class
+		}
+	}
 }
