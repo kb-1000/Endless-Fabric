@@ -27,6 +27,8 @@ public class EndlessModBlocks {
     	return 0;
 	})), "fluid_cauldron");
     public static final Block BEACON_OF_UNDYING = register(new BeaconOfUndyingBlock(FabricBlockSettings.copyOf(Blocks.BEACON)), "beacon_of_undying");
+	public static final Block ASHEN_ENDSTONE = register(new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.PICKAXES,2).lightLevel(state -> {return 15;})), "ashen_endstone");
+	public static final Block FINALLIUM_BLOCK = register(new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE)), "finallium_block");
 
     private static Block register(Block block, String name) {
         return Registry.register(Registry.BLOCK, new Identifier(Endless.MOD_ID, name), block);
@@ -34,5 +36,6 @@ public class EndlessModBlocks {
 
     public static void init() {
         // just loads the class
+
     }
 }
