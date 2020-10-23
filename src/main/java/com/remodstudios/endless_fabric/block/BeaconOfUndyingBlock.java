@@ -81,7 +81,7 @@ public class BeaconOfUndyingBlock extends BlockWithEntity {
 	private void explode(World world, final BlockPos explodedPos) {
 		world.removeBlock(explodedPos, false);
 		Stream<Direction> stream = Direction.Type.HORIZONTAL.stream();
-		boolean bl = stream.map(explodedPos::offset).anyMatch((pos) -> {
+		boolean matches = stream.map(explodedPos::offset).anyMatch((pos) -> {
 			FluidState fluidState = world.getFluidState(pos);
 			if (!fluidState.isIn(FluidTags.WATER)) {
 				return false;
@@ -97,10 +97,10 @@ public class BeaconOfUndyingBlock extends BlockWithEntity {
 				}
 			}
 		});
-		final boolean bl2 = bl || world.getFluidState(explodedPos.up()).isIn(FluidTags.WATER);
+		boolean matchesFluid = matches || world.getFluidState(explodedPos.up()).isIn(FluidTags.WATER);
 		ExplosionBehavior explosionBehavior = new ExplosionBehavior() {
 			public Optional<Float> getBlastResistance(Explosion explosion, BlockView world, BlockPos pos, BlockState blockState, FluidState fluidState) {
-				return pos.equals(explodedPos) && bl2 ? Optional.of(Blocks.WATER.getBlastResistance()) : super.getBlastResistance(explosion, world, pos, blockState, fluidState);
+				return pos.equals(explodedPos) && matchesFluid ? Optional.of(Blocks.WATER.getBlastResistance()) : super.getBlastResistance(explosion, world, pos, blockState, fluidState);
 			}
 		};
 		world.createExplosion(null, DamageSource.badRespawnPoint(), explosionBehavior, explodedPos.getX() + 0.5D, explodedPos.getY() + 0.5D, explodedPos.getZ() + 0.5D, 5.0F, true, Explosion.DestructionType.DESTROY);
