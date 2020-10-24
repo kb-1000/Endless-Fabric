@@ -1,6 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "endless_fabric:block/ashen_endstone"
+    "top": "endless_fabric:block/ashen_endstone_top",
+    "side": "endless_fabric:block/ashen_endstone_side",
+    "bottom": "minecraft:block/end_stone"
   }
 }
