@@ -24,7 +24,7 @@ public class EndlessModItems {
     public static final Item PHAZED_VOID = register(EndlessModBlocks.PHAZED_VOID, "phazed_void", new Item.Settings().group(ItemGroup.MISC));
     public static final Item RUSTED_IRON_BLOCK = register(EndlessModBlocks.RUSTED_IRON_BLOCK, "rusted_iron_block", new Item.Settings().group(ItemGroup.MISC));
     public static final Item TOPAZ_BLOCK = register(EndlessModBlocks.TOPAZ_BLOCK, "topaz_block", new Item.Settings().group(ItemGroup.MISC));
-    public static final Item MOLTEN_TOPAZ_BUCKET = register(new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings().group(ItemGroup.MISC)), "molten_topaz_bucket");
+    public static final Item MOLTEN_TOPAZ_BUCKET = register(new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings()), "molten_topaz_bucket");
     public static final Item FLUID_CAULDRON = register(EndlessModBlocks.FLUID_CAULDRON, "fluid_cauldron", new Item.Settings().group(ItemGroup.MISC));
 
     private static Item register(Item item, String name) {
