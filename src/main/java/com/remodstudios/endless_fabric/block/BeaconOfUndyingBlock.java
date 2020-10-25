@@ -3,7 +3,6 @@ package com.remodstudios.endless_fabric.block;
 import java.util.List;
 
 import com.remodstudios.endless_fabric.block.entity.BeaconOfUndyingBlockEntity;
-import io.github.cottonmc.cotton.gui.PropertyDelegateHolder;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.block.BlockRenderType;
@@ -11,16 +10,21 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
-public class BeaconOfUndyingBlock extends BlockWithEntity implements PropertyDelegateHolder {
+public class BeaconOfUndyingBlock extends BlockWithEntity{
 	public BeaconOfUndyingBlock(Settings settings) {
 		super(settings);
 	}
@@ -45,7 +49,8 @@ public class BeaconOfUndyingBlock extends BlockWithEntity implements PropertyDel
 	}
 
 	@Override
-	public PropertyDelegate getPropertyDelegate() {
-		return null;
+	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+		player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
+		return ActionResult.SUCCESS;
 	}
 }

@@ -1,5 +1,6 @@
 package com.remodstudios.endless_fabric.block.entity;
 
+import com.remodstudios.endless_fabric.block.entity.screen.BeaconOfUndyingScreenHandler;
 import io.github.cottonmc.cotton.gui.PropertyDelegateHolder;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,6 +12,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
@@ -36,8 +38,8 @@ public class BeaconOfUndyingBlockEntity extends BlockEntity implements NamedScre
 	}
 
 	@Override
-	public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-		return null;
+	public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+		return new BeaconOfUndyingScreenHandler(syncId, inv, ScreenHandlerContext.create(this.world, this.pos));
 	}
 
 	@Override
