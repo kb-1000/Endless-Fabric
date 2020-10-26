@@ -22,8 +22,11 @@ public class EndlessModScreenHandlerTypes {
 
 	}
 
-	// TODO
+	// IMPORTANT:
+	// Do not remove this suppression.
+	// This is to prevent issues with inferring generic types.
+	@SuppressWarnings("RedundantTypeArguments")
 	public static void initClient() {
-		ScreenRegistry.register(BEACON_OF_UNDYING, BeaconOfUndyingScreen::new);
+		ScreenRegistry.<BeaconOfUndyingScreenHandler, BeaconOfUndyingScreen>register(BEACON_OF_UNDYING, BeaconOfUndyingScreen::new);
 	}
 }

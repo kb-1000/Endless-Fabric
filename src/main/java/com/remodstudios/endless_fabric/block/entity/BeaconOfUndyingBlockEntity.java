@@ -78,7 +78,7 @@ public class BeaconOfUndyingBlockEntity extends BlockEntity implements NamedScre
 		return this.serialize(tag);
 	}
 
-	public class PropertyDelegateImpl implements PropertyDelegate {
+	class PropertyDelegateImpl implements PropertyDelegate {
 		private PropertyDelegateImpl() {
 		}
 
