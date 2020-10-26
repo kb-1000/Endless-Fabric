@@ -2,7 +2,6 @@ package com.remodstudios.endless_fabric.block.entity;
 
 import com.remodstudios.endless_fabric.block.entity.screen.BeaconOfUndyingScreenHandler;
 import io.github.cottonmc.cotton.gui.PropertyDelegateHolder;
-import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
