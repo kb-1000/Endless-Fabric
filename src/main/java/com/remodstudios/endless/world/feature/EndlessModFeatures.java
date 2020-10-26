@@ -34,7 +34,7 @@ public class EndlessModFeatures {
         BuiltinRegistries.BIOME.stream()
                                .filter(biome -> biome.getCategory().equals(Biome.Category.THEEND))
                                .forEach(biome -> {
-                                   List<List<Supplier<ConfiguredFeature<?, ?>>>> features  = new ArrayList<>(biome.getGenerationSettings().getFeatures());
+                                   final List<List<Supplier<ConfiguredFeature<?, ?>>>> features  = new ArrayList<>(biome.getGenerationSettings().getFeatures());
                                    List<Supplier<ConfiguredFeature<?, ?>>> ores;
                                    try {
                                        ores = new ArrayList<>(features.get(GenerationStep.Feature.UNDERGROUND_ORES.ordinal()));
