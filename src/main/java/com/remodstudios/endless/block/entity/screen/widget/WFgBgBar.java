@@ -75,7 +75,7 @@ public class WFgBgBar extends WWidget {
 		if (val > 0) {
 			ScreenDrawing.coloredRect(x, y, this.getWidth(), this.getHeight() * (val / this.max), this.color);
 		}
-		ScreenDrawing.texturedRect(x, y, 16, 32, DEFAULT_BACKGROUND_TEX, 0x000000);
+		ScreenDrawing.texturedRect(x, y, this.getWidth(), this.getHeight(), DEFAULT_BACKGROUND_TEX, 0x000000);
 		super.paint(matrices, x, y, mouseX, mouseY);
 	}
 }
