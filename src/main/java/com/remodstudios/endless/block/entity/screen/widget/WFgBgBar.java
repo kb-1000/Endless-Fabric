@@ -1,5 +1,6 @@
 package com.remodstudios.endless.block.entity.screen.widget;
 
+import com.remodstudios.endless.Endless;
 import io.github.cottonmc.cotton.gui.client.ScreenDrawing;
 import io.github.cottonmc.cotton.gui.widget.WWidget;
 import io.github.cottonmc.cotton.gui.widget.data.Texture;
@@ -9,12 +10,12 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.Identifier;
 
 public class WFgBgBar extends WWidget {
-	public static final Texture DEFAULT_BACKGROUND_TEX = new Texture(new Identifier("endless_fabric:textures/screen/widget/bar_bg.png"), 0.0F, 0.0F, 0.5F, 1.0F);
+	public static final Texture DEFAULT_BACKGROUND_TEX = new Texture(new Identifier(Endless.MOD_ID, "textures/screen/widget/bar_bg.png"), 0.0F, 0.0F, 0.5F, 1.0F);
 	private PropertyDelegate propertyDelegate;
 	private int index;
 	private int max;
 	private int color;
-	private Texture foregroundTexture = new Texture(new Identifier("endless_fabric:textures/screen/widget/green.png"));
+	private Texture foregroundTexture = new Texture(new Identifier(Endless.MOD_ID, "textures/screen/widget/green.png"));
 
 	public WFgBgBar(PropertyDelegate propertyDelegate, int index, int max, int color) {
 		this.propertyDelegate = propertyDelegate;
