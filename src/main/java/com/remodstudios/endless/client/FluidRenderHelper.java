@@ -64,7 +64,7 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 
 	@Override
 	public Identifier getFabricId() {
-		return new Identifier("endless_fabric", this.name + "_reload_listener");
+		return new Identifier(Endless.MOD_ID, this.name + "_reload_listener");
 	}
 
 	@Override
