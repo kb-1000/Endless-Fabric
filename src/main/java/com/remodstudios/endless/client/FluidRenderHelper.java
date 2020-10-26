@@ -1,5 +1,6 @@
 package com.remodstudios.endless.client;
 
+import java.util.Arrays;
 import java.util.function.Function;
 
 import com.remodstudios.endless.Endless;
@@ -82,5 +83,9 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 	@Override
 	public int getFluidColor(BlockRenderView view, BlockPos pos, FluidState state) {
 		return this.color;
+	}
+
+	public static void initAll() {
+		Arrays.stream(values()).forEach(FluidRenderHelper::init);
 	}
 }
