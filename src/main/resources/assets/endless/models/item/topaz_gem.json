@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "endless_fabric:item/topaz_gem"
+    "layer0": "endless:item/topaz_gem"
   }
 }

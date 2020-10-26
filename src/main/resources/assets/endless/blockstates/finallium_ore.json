@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "endless_fabric:block/finallium_ore"
+      "model": "endless:block/finallium_ore"
     }
   }
 }

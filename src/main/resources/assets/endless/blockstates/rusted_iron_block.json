@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "endless_fabric:block/rusted_iron_block"
+      "model": "endless:block/rusted_iron_block"
     }
   }
 }

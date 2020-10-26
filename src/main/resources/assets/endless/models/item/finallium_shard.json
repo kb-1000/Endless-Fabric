@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "endless_fabric:item/finallium_shard"
+    "layer0": "endless:item/finallium_shard"
   }
 }

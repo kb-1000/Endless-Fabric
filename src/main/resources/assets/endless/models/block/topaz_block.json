@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "endless_fabric:block/topaz_block"
+    "all": "endless:block/topaz_block"
   }
 }
