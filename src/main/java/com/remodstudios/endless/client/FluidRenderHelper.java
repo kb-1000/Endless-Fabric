@@ -2,6 +2,7 @@ package com.remodstudios.endless.client;
 
 import java.util.function.Function;
 
+import com.remodstudios.endless.Endless;
 import com.remodstudios.endless.fluid.EndlessModFluids;
 
 import net.minecraft.client.MinecraftClient;
@@ -40,8 +41,8 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 
 	FluidRenderHelper(String name, FlowableFluid still, FlowableFluid flowing, int color) {
 		this.name = name;
-		this.stillSpriteId = new Identifier("endless_fabric", String.format("block/%s_still", name));
-		this.flowingSpriteId = new Identifier("endless_fabric", String.format("block/%s_flow", name));
+		this.stillSpriteId = new Identifier(Endless.MOD_ID, String.format("block/%s_still", name));
+		this.flowingSpriteId = new Identifier(Endless.MOD_ID, String.format("block/%s_flow", name));
 		this.still = still;
 		this.flowing = flowing;
 		this.color = color;
