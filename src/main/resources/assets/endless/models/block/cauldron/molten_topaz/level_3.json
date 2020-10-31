@@ -1,0 +1,6 @@
+{
+  "parent": "endless:block/cauldron/fluid_level_3",
+  "textures": {
+    "fluid": "endless:block/molten_topaz_still"
+  }
+}
