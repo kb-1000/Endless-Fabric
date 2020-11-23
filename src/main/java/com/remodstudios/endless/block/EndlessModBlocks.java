@@ -14,10 +14,13 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricMaterialBuilder;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 
 public class EndlessModBlocks {
+	//ores
     public static final Block TOPAZ_ORE = register(new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE)), "topaz_ore");
     public static final Block FINALLIUM_ORE = register(new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE)), "finallium_ore");
     public static final Block RUSTED_IRON_BLOCK = register(new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES, 3).sounds(BlockSoundGroup.METAL)), "rusted_iron_block");
+    //crytal fields
     public static final Block PHAZED_VOID = register(new Block(FabricBlockSettings.of(new FabricMaterialBuilder(MaterialColor.BLUE_TERRACOTTA).notSolid().allowsMovement().build()).breakByTool(FabricToolTags.SHEARS).sounds(BlockSoundGroup.GLASS)), "phazed_void");
+    //mineral stuff
     public static final Block TOPAZ_BLOCK = register(new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE)),"topaz_block");
     public static final Block MOLTEN_TOPAZ = register(new MoltenTopazFluidBlock(FabricBlockSettings.copyOf(Blocks.LAVA)), "molten_topaz");
     public static final Block FLUID_CAULDRON = register(new FluidCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON).lightLevel(state -> {
