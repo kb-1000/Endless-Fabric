@@ -65,7 +65,7 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 
 	@Override
 	public Identifier getFabricId() {
-		return new Identifier(Endless.MOD_ID, this.name + "_reload_listener");
+		return Endless.id(this.name + "_reload_listener");
 	}
 
 	@Override
@@ -86,6 +86,9 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 	}
 
 	public static void initAll() {
-		Arrays.stream(values()).forEach(FluidRenderHelper::init);
+		// leocth - streams are bad
+		for (FluidRenderHelper value : values()) {
+			value.init();
+		}
 	}
 }

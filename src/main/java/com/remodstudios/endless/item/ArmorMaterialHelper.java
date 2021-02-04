@@ -1,5 +1,6 @@
 package com.remodstudios.endless.item;
 
+import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 import net.minecraft.entity.EquipmentSlot;
@@ -9,6 +10,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Lazy;
 
 public enum ArmorMaterialHelper implements ArmorMaterial {
+	// leocth - just what in the ever loving fuck is this
 	;
 
 	private final ToIntFunction<EquipmentSlot> durabilityFunction;
@@ -18,9 +20,9 @@ public enum ArmorMaterialHelper implements ArmorMaterial {
 	private final String name;
 	private final float toughness;
 	private final float knockbackResistance;
-	private final Lazy<Ingredient> repairIngredientSupplier;
+	private final Supplier<Ingredient> repairIngredientSupplier;
 
-	ArmorMaterialHelper(ToIntFunction<EquipmentSlot> durabilityFunction, ToIntFunction<EquipmentSlot> protectionFunction, int enchantability, SoundEvent equipSound, String name, float toughness, float knockbackResistance, Lazy<Ingredient> repairIngredientSupplier) {
+	ArmorMaterialHelper(ToIntFunction<EquipmentSlot> durabilityFunction, ToIntFunction<EquipmentSlot> protectionFunction, int enchantability, SoundEvent equipSound, String name, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
 		this.durabilityFunction = durabilityFunction;
 		this.protectionFunction = protectionFunction;
 		this.enchantability = enchantability;
