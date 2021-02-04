@@ -38,8 +38,8 @@ public class EndlessModBlocks {
 		register(TOPAZ_BLOCK, "topaz_block");
 		register(FINALLIUM_ORE, "finallium_ore");
 		register(FINALLIUM_BLOCK, "finallium_block");
-		register(FINALLIUM_ORE, "cobalt_ore");
-		register(FINALLIUM_BLOCK, "cobalt_block");
+		register(COBALT_ORE, "cobalt_ore");
+		register(COBALT_BLOCK, "cobalt_block");
 		register(RUSTED_IRON_BLOCK, "rusted_iron_block");
 		register(PHAZED_VOID, "phazed_void");
 		register(MOLTEN_TOPAZ, "molten_topaz");

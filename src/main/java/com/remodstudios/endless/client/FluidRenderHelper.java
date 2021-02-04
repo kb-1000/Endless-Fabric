@@ -42,8 +42,8 @@ public enum FluidRenderHelper implements ClientSpriteRegistryCallback, SimpleSyn
 
 	FluidRenderHelper(String name, FlowableFluid still, FlowableFluid flowing, int color) {
 		this.name = name;
-		this.stillSpriteId = new Identifier(Endless.MOD_ID, String.format("block/%s_still", name));
-		this.flowingSpriteId = new Identifier(Endless.MOD_ID, String.format("block/%s_flow", name));
+		this.stillSpriteId = Endless.id(String.format("block/%s_still", name));
+		this.flowingSpriteId = Endless.id(String.format("block/%s_flow", name));
 		this.still = still;
 		this.flowing = flowing;
 		this.color = color;

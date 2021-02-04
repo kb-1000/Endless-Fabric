@@ -5,11 +5,8 @@ import com.google.common.collect.ImmutableBiMap;
 import com.remodstudios.endless.fluid.EndlessModFluids;
 import com.remodstudios.endless.mixin.BucketItemAccessor;
 
-import net.minecraft.block.AbstractCauldronBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CauldronBlock;
-import net.minecraft.entity.Entity;
+import net.minecraft.block.*;
+import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
@@ -25,11 +22,11 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class FluidCauldronBlock extends AbstractCauldronBlock {
+public class FluidCauldronBlock extends LeveledCauldronBlock {
 	public static final EnumProperty<FluidType> FLUID_TYPE = EnumProperty.of("fluid", FluidType.class);
 
 	public FluidCauldronBlock(Settings settings) {
-		super(settings);
+		super(settings, RAIN_PREDICATE, CauldronBehavior.LAVA_CAULDRON_BEHAVIOR);
 		this.setDefaultState(this.getDefaultState().with(FLUID_TYPE, FluidType.NONE));
 	}
 
