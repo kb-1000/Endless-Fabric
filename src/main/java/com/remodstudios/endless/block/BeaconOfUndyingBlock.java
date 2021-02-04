@@ -3,11 +3,9 @@ package com.remodstudios.endless.block;
 import java.util.List;
 
 import com.remodstudios.endless.block.entity.BeaconOfUndyingBlockEntity;
+import net.minecraft.block.*;
 import org.jetbrains.annotations.Nullable;
 
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,19 +22,9 @@ import net.minecraft.world.World;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
-public class BeaconOfUndyingBlock extends BlockWithEntity{
+public class BeaconOfUndyingBlock extends Block implements BlockEntityProvider {
 	public BeaconOfUndyingBlock(Settings settings) {
 		super(settings);
-	}
-
-	@Override
-	public BlockEntity createBlockEntity(BlockView world) {
-		return new BeaconOfUndyingBlockEntity();
-	}
-
-	@Override
-	public BlockRenderType getRenderType(BlockState state) {
-		return BlockRenderType.MODEL;
 	}
 
 	@Environment(EnvType.CLIENT)
@@ -52,5 +40,11 @@ public class BeaconOfUndyingBlock extends BlockWithEntity{
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
 		return ActionResult.SUCCESS;
+	}
+
+	@Nullable
+	@Override
+	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+		return new BeaconOfUndyingBlockEntity();
 	}
 }

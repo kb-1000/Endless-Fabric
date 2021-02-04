@@ -19,6 +19,10 @@ repositories {
 		name = "CottonMC"
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
 }
 
 minecraft {
@@ -30,8 +34,7 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	modImplementation "io.github.cottonmc:LibGui:${project.libgui_version}"
-	modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") {
+	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
 		exclude module: 'fabric-api'
 	}
 }

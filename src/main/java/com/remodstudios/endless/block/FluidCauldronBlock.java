@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableBiMap;
 import com.remodstudios.endless.fluid.EndlessModFluids;
 import com.remodstudios.endless.mixin.BucketItemAccessor;
 
+import net.minecraft.block.AbstractCauldronBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CauldronBlock;
@@ -24,16 +25,12 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class FluidCauldronBlock extends CauldronBlock {
+public class FluidCauldronBlock extends AbstractCauldronBlock {
 	public static final EnumProperty<FluidType> FLUID_TYPE = EnumProperty.of("fluid", FluidType.class);
 
 	public FluidCauldronBlock(Settings settings) {
 		super(settings);
 		this.setDefaultState(this.getDefaultState().with(FLUID_TYPE, FluidType.NONE));
-	}
-
-	@Override
-	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 	}
 
 	@Override

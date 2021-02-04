@@ -6,6 +6,7 @@ import com.remodstudios.endless.block.entity.screen.EndlessModScreenHandlerTypes
 import com.remodstudios.endless.fluid.EndlessModFluids;
 import com.remodstudios.endless.item.EndlessModItems;
 import com.remodstudios.endless.world.feature.EndlessModFeatures;
+import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +15,7 @@ import net.fabricmc.loader.api.FabricLoader;
 
 public class Endless implements ModInitializer {
     public static final String MOD_ID = "endless";
-    public static final String MOD_NAME = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(IllegalStateException::new).getMetadata().getName();
+    public static final String MOD_NAME = "Endless";
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
     @Override
@@ -27,4 +28,6 @@ public class Endless implements ModInitializer {
         EndlessModFeatures.init();
 		EndlessModFluids.init();
     }
+
+    public static Identifier id(String path) { return new Identifier(MOD_ID, path); }
 }
