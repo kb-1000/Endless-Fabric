@@ -23,9 +23,9 @@ repositories {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
 	}
-}
-
-minecraft {
+	maven {
+		url = 'https://raw.githubusercontent.com/Devan-Kerman/Devan-Repo/master/'
+	}
 }
 
 dependencies {
@@ -39,6 +39,7 @@ dependencies {
 		exclude module: 'fabric-api'
 	}
 	 */
+	modImplementation "net.devtech:arrp:${project.arrp_version}"
 }
 
 processResources {
