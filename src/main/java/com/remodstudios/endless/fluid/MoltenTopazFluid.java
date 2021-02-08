@@ -36,7 +36,7 @@ public abstract class MoltenTopazFluid extends FlowableFluid {
 
 	@Override
 	public Item getBucketItem() {
-		return EndlessModItems.MOLTEN_TOPAZ_BUCKET;
+		return EndlessModItems.INSTANCE.MOLTEN_TOPAZ_BUCKET;
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public abstract class MoltenTopazFluid extends FlowableFluid {
 
 	@Override
 	public BlockState toBlockState(FluidState state) {
-		return EndlessModBlocks.MOLTEN_TOPAZ.getDefaultState().with(FluidBlock.LEVEL, state.isStill() ? 0 : 8 - Math.min(state.getLevel(), 8) + (state.get(FALLING) ? 8 : 0));
+		return EndlessModBlocks.INSTANCE.MOLTEN_TOPAZ.getDefaultState().with(FluidBlock.LEVEL, state.isStill() ? 0 : 8 - Math.min(state.getLevel(), 8) + (state.get(FALLING) ? 8 : 0));
 	}
 
 	@Override

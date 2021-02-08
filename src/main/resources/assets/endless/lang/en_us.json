@@ -1,15 +1,21 @@
 {
-  "item.endless_fabric.topaz_gem": "Topaz Gem",
-  "item.endless_fabric.finallium_shard": "Finallium Shard",
-  "item.endless_fabric.molten_topaz_bucket": "Molten Topaz Bucket",
+  "item.endless.topaz_gem": "Topaz Gem",
+  "item.endless.finallium_shard": "Finallium Shard",
+  "item.endless.cobalt_dust": "Cobalt Dust",
+  "item.endless.cobalt_ingot": "Cobalt Ingot",
+  "item.endless.molten_topaz_bucket": "Molten Topaz Bucket",
 
-  "block.endless_fabric.topaz_ore": "Topaz Ore",
-  "block.endless_fabric.finallium_ore": "Finallium Ore",
-  "block.endless_fabric.phazed_void": "Phazed Void",
-  "block.endless_fabric.rusted_iron_block":"Rusted Iron Block",
-  "block.endless_fabric.topaz_block":"Block of Topaz",
-  "block.endless_fabric.fluid_cauldron": "Fluid Cauldron",
-  "block.endless_fabric.beacon_of_undying": "Beacon of Undying",
-  "block.endless_fabric.ashen_endstone":"Ashen Endstone",
-  "block.endless_fabric.finallium_block":"Block of Finallium"
+  "itemGroup.endless.group": "Endless",
+
+  "block.endless.topaz_ore": "Topaz Ore",
+  "block.endless.topaz_block":"Block of Topaz",
+  "block.endless.finallium_ore": "Finallium Ore",
+  "block.endless.finallium_block":"Block of Finallium",
+  "block.endless.cobalt_ore": "Cobalt Ore",
+  "block.endless.cobalt_block":"Block of Cobalt",
+  "block.endless.phazed_void": "Phazed Void",
+  "block.endless.rusted_iron_block":"Rusted Iron Block",
+  "block.endless.fluid_cauldron": "Fluid Cauldron",
+  "block.endless.beacon_of_undying": "Beacon of Undying",
+  "block.endless.ashen_endstone":"Ashen Endstone"
 }

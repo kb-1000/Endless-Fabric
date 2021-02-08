@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 public class EndlessModBlockEntityTypes {
 	public static final BlockEntityType<BeaconOfUndyingBlockEntity> BEACON_OF_UNDYING =
 			FabricBlockEntityTypeBuilder
-					.create(BeaconOfUndyingBlockEntity::new, EndlessModBlocks.BEACON_OF_UNDYING)
+					.create(BeaconOfUndyingBlockEntity::new, EndlessModBlocks.INSTANCE.BEACON_OF_UNDYING)
 					.build(null);
 
 	private static <T extends BlockEntity> BlockEntityType<T> register(BlockEntityType<T> type, String name) {

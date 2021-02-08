@@ -7,11 +7,19 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Lazy;
+import net.minecraft.sound.SoundEvents;
 
 public enum ArmorMaterialHelper implements ArmorMaterial {
 	// leocth - just what in the ever loving fuck is this
-	;
+	FINALLIUM(
+			s -> 1, // TODO balance
+			s -> 1, // TODO balance
+			10,
+			SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+			"finallium",
+			0f, 0f,
+			() -> Ingredient.ofItems(EndlessModItems.INSTANCE.FINALLIUM_SHARD) // todo use tags
+	);
 
 	private final ToIntFunction<EquipmentSlot> durabilityFunction;
 	private final ToIntFunction<EquipmentSlot> protectionFunction;

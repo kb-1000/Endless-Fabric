@@ -23,8 +23,8 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 
 public class EndlessModFeatures {
-    public static final ConfiguredFeature<?, ?> TOPAZ_ORE = register("topaz_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.TOPAZ_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
-    public static final ConfiguredFeature<?, ?> FINALLIUM_ORE = register("finallium_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.FINALLIUM_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
+    public static final ConfiguredFeature<?, ?> TOPAZ_ORE = register("topaz_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.INSTANCE.TOPAZ_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
+    public static final ConfiguredFeature<?, ?> FINALLIUM_ORE = register("finallium_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.INSTANCE.FINALLIUM_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
 
     public static ConfiguredFeature<?, ?> register(String name, ConfiguredFeature<?, ?> feature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Endless.id(name), feature);

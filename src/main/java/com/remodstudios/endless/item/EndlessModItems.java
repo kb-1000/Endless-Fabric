@@ -2,73 +2,101 @@ package com.remodstudios.endless.item;
 
 import com.remodstudios.endless.Endless;
 import com.remodstudios.endless.block.EndlessModBlocks;
+import com.remodstudios.endless.datagen.HandheldItemGenerator;
 import com.remodstudios.endless.fluid.EndlessModFluids;
-
+import com.remodstudios.yarnandneedles.datagen.generators.item.BlockItemGenerator;
+import com.remodstudios.yarnandneedles.items.ItemRegistry;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-
 import net.fabricmc.fabric.api.tag.TagRegistry;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.*;
+import net.minecraft.tag.Tag;
 
 @SuppressWarnings("unused")
-public class EndlessModItems {
-	// Items
-	private static final FabricItemSettings DEFAULT_SETTINGS = new FabricItemSettings().group(ItemGroup.MISC);
+public class EndlessModItems extends ItemRegistry {
+	public static final EndlessModItems INSTANCE = new EndlessModItems();
 
-    public static final Item TOPAZ_GEM 			= new Item(DEFAULT_SETTINGS);
-    public static final Item FINALLIUM_SHARD 	= new Item(DEFAULT_SETTINGS);
-    public static final Item COBALT_DUST 		= new Item(DEFAULT_SETTINGS);
-	public static final Item COBALT_INGOT 		= new Item(DEFAULT_SETTINGS);
+	private final ItemGroup GROUP
+			= FabricItemGroupBuilder.build(
+				Endless.id("group"),
+				() -> new ItemStack(EndlessModItems.INSTANCE.TOPAZ_GEM)
+	);
+
+	//region Item declarations
+	private final FabricItemSettings BASE_SETTINGS = new FabricItemSettings().group(GROUP);
+
+    public final Item TOPAZ_GEM 			= add("topaz_gem");
+    public final Item FINALLIUM_SHARD 		= add("finallium_shard");
+    // TODO: extend protected tools in YNN - leocth
+	public final Item FINALLIUM_SWORD
+			= add("finallium_sword",
+					HandheldItemGenerator.INSTANCE,
+					new Item(BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_SHOVEL 		= add("finallium_shovel", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
+	public final Item FINALLIUM_PICKAXE 	= add("finallium_pickaxe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
+	public final Item FINALLIUM_AXE 		= add("finallium_axe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
+	public final Item FINALLIUM_HOE 		= add("finallium_hoe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
+	public final Item FINALLIUM_HELMET 		=
+			add("finallium_helmet",
+					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.HEAD, BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_CHESTPLATE 	=
+			add("finallium_chestplate",
+					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.CHEST, BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_LEGGINGS 	=
+			add("finallium_leggings",
+					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.LEGS, BASE_SETTINGS)
+			);
+	public  final Item FINALLIUM_BOOTS 		=
+			add("finallium_boots",
+					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.FEET, BASE_SETTINGS)
+			);
+
+    public final Item COBALT_DUST 			= add("cobalt_dust");
+	public final Item COBALT_INGOT 			= add("cobalt_ingot");
 	// hidden from item group :yeef:
-	public static final Item MOLTEN_TOPAZ_BUCKET = new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings());
+	public final Item MOLTEN_TOPAZ_BUCKET =
+			add("molten_topaz_bucket",
+				new BucketItem(EndlessModFluids.MOLTEN_TOPAZ, new Item.Settings())
+			);
 
-    // Block Item
-    public static final Item TOPAZ_ORE = makeBlockItem(EndlessModBlocks.TOPAZ_ORE);
-    public static final Item FINALLIUM_ORE = makeBlockItem(EndlessModBlocks.FINALLIUM_ORE);
-    public static final Item PHAZED_VOID = makeBlockItem(EndlessModBlocks.PHAZED_VOID);
-    public static final Item RUSTED_IRON_BLOCK = makeBlockItem(EndlessModBlocks.RUSTED_IRON_BLOCK);
-    public static final Item TOPAZ_BLOCK = makeBlockItem(EndlessModBlocks.TOPAZ_BLOCK);
-    public static final Item FLUID_CAULDRON = makeBlockItem(EndlessModBlocks.FLUID_CAULDRON);
-	public static final Item ASHEN_ENDSTONE = makeBlockItem(EndlessModBlocks.ASHEN_ENDSTONE);
-	public static final Item FINALLIUM_BLOCK = makeBlockItem(EndlessModBlocks.FINALLIUM_BLOCK);
-	public static final Item COBALT_ORE = makeBlockItem(EndlessModBlocks.COBALT_ORE);
-	public static final Item COBALT_BLOCK = makeBlockItem(EndlessModBlocks.COBALT_BLOCK);
+    public final BlockItem TOPAZ_ORE = addBlockItem("topaz_ore", EndlessModBlocks.INSTANCE.TOPAZ_ORE);
+	public final BlockItem TOPAZ_BLOCK = addBlockItem("topaz_block", EndlessModBlocks.INSTANCE.TOPAZ_BLOCK);
+    public final BlockItem FINALLIUM_ORE = addBlockItem("finallium_ore", EndlessModBlocks.INSTANCE.FINALLIUM_ORE);
+	public final BlockItem FINALLIUM_BLOCK = addBlockItem("finallium_block", EndlessModBlocks.INSTANCE.FINALLIUM_BLOCK);
+    public final BlockItem PHAZED_VOID = addBlockItem("phazed_void", EndlessModBlocks.INSTANCE.PHAZED_VOID);
+    public final BlockItem RUSTED_IRON_BLOCK = addBlockItem("rusted_iron_block", EndlessModBlocks.INSTANCE.RUSTED_IRON_BLOCK);
+    public final BlockItem FLUID_CAULDRON =
+			addBlockItem("fluid_cauldron",
+					new BlockItemGenerator(Endless.id("cauldron/cauldron_base")),
+					EndlessModBlocks.INSTANCE.FLUID_CAULDRON
+			);
+	public final BlockItem ASHEN_ENDSTONE = addBlockItem("ashen_endstone", EndlessModBlocks.INSTANCE.ASHEN_ENDSTONE);
+	public final BlockItem COBALT_ORE = addBlockItem("cobalt_ore", EndlessModBlocks.INSTANCE.COBALT_ORE);
+	public final BlockItem COBALT_BLOCK = addBlockItem("cobalt_block", EndlessModBlocks.INSTANCE.COBALT_BLOCK);
+	public final BlockItem BEACON_OF_UNDYING = addBlockItem("beacon_of_undying", EndlessModBlocks.INSTANCE.BEACON_OF_UNDYING);
 
-    // Methods
-    private static void register(Item item, String name) {
-		Registry.register(Registry.ITEM, Endless.id(name), item);
+	//endregion
+
+	public EndlessModItems() {
+		super(Endless.MOD_ID);
 	}
 
-	private static BlockItem makeBlockItem(Block block) {
-		return new BlockItem(block, DEFAULT_SETTINGS);
+	@Override
+	protected FabricItemSettings getDefaultSettings() {
+		return BASE_SETTINGS;
 	}
 
-    public static void init() {
-		register(TOPAZ_GEM, "topaz_gem");
-		register(FINALLIUM_SHARD, "finallium_shard");
-		register(COBALT_DUST, "cobalt_dust");
-		register(COBALT_INGOT, "cobalt_ingot");
-		register(MOLTEN_TOPAZ_BUCKET, "molten_topaz_bucket");
+	@Override
+	public void init() {
+		super.init();
+		Tags.init();
+	}
 
-		register(TOPAZ_ORE, "finallium_ore");
-		register(PHAZED_VOID, "phazed_void");
-		register(RUSTED_IRON_BLOCK, "rusted_iron_block");
-		register(TOPAZ_BLOCK, "topaz_block");
-		register(FLUID_CAULDRON, "fluid_cauldron");
-		register(ASHEN_ENDSTONE, "ashen_endstone");
-		register(FINALLIUM_BLOCK, "finallium_block");
-		register(COBALT_ORE, "cobalt_ore");
-		register(COBALT_BLOCK, "cobalt_block");
-    	Tags.init();
-    }
-
-    public static class Tags {
+	public static class Tags {
     	public static final Tag<Item> BEACON_OF_UNDYING_PAYMENT_ITEMS = TagRegistry.item(Endless.id("beacon_of_undying_payment_items"));
 
     	public static void init() {

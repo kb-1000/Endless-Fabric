@@ -16,16 +16,10 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name = "CottonMC"
-		url = "https://server.bbkr.space/artifactory/libs-release"
-	}
-	maven {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
 	}
-	maven {
-		url = 'https://raw.githubusercontent.com/Devan-Kerman/Devan-Repo/master/'
-	}
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -39,7 +33,8 @@ dependencies {
 		exclude module: 'fabric-api'
 	}
 	 */
-	modImplementation "net.devtech:arrp:${project.arrp_version}"
+	modImplementation "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version:dev"
+	include "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version:dev"
 }
 
 processResources {
