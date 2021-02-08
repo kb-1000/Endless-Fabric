@@ -6,7 +6,7 @@ import com.remodstudios.endless.fluid.EndlessModFluids;
 import com.remodstudios.yarnandneedles.datagen.ResourceGenerator;
 import com.remodstudios.yarnandneedles.datagen.generators.item.BlockItemGenerator;
 import com.remodstudios.yarnandneedles.datagen.generators.item.SimpleItemGenerator;
-import com.remodstudios.yarnandneedles.items.ItemRegistry;
+import com.remodstudios.yarnandneedles.items.*;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagRegistry;
