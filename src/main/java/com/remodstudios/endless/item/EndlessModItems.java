@@ -2,9 +2,10 @@ package com.remodstudios.endless.item;
 
 import com.remodstudios.endless.Endless;
 import com.remodstudios.endless.block.EndlessModBlocks;
-import com.remodstudios.endless.datagen.HandheldItemGenerator;
 import com.remodstudios.endless.fluid.EndlessModFluids;
+import com.remodstudios.yarnandneedles.datagen.ResourceGenerator;
 import com.remodstudios.yarnandneedles.datagen.generators.item.BlockItemGenerator;
+import com.remodstudios.yarnandneedles.datagen.generators.item.SimpleItemGenerator;
 import com.remodstudios.yarnandneedles.items.ItemRegistry;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -12,6 +13,7 @@ import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.tag.Tag;
+import net.minecraft.util.Identifier;
 
 @SuppressWarnings("unused")
 public class EndlessModItems extends ItemRegistry {
@@ -28,31 +30,45 @@ public class EndlessModItems extends ItemRegistry {
 
     public final Item TOPAZ_GEM 			= add("topaz_gem");
     public final Item FINALLIUM_SHARD 		= add("finallium_shard");
-    // TODO: extend protected tools in YNN - leocth
+
+	//TODO: move to YNN? - leocth
+	private final ResourceGenerator HANDHELD = new SimpleItemGenerator(new Identifier("item/handheld"));
 	public final Item FINALLIUM_SWORD
 			= add("finallium_sword",
-					HandheldItemGenerator.INSTANCE,
-					new Item(BASE_SETTINGS)
+					HANDHELD,
+					new SwordItem(EndlessToolMaterials.FINALLIUM, 3, -2.4F, BASE_SETTINGS)
 			);
-	public final Item FINALLIUM_SHOVEL 		= add("finallium_shovel", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
-	public final Item FINALLIUM_PICKAXE 	= add("finallium_pickaxe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
-	public final Item FINALLIUM_AXE 		= add("finallium_axe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
-	public final Item FINALLIUM_HOE 		= add("finallium_hoe", HandheldItemGenerator.INSTANCE, new Item(BASE_SETTINGS));
+	public final Item FINALLIUM_SHOVEL 		=
+			add("finallium_shovel", HANDHELD,
+					new ShovelItem(EndlessToolMaterials.FINALLIUM, 1.5f, -3f, BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_PICKAXE 	=
+			add("finallium_pickaxe", HANDHELD,
+					new ModPickaxeItem(EndlessToolMaterials.FINALLIUM, 1, -2.8f, BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_AXE 		=
+			add("finallium_axe", HANDHELD,
+					new ModAxeItem(EndlessToolMaterials.FINALLIUM, 6.0F, -3.1F, BASE_SETTINGS)
+			);
+	public final Item FINALLIUM_HOE 		=
+			add("finallium_hoe", HANDHELD,
+					new ModHoeItem(EndlessToolMaterials.FINALLIUM, -2, -1.0F, BASE_SETTINGS)
+			);
 	public final Item FINALLIUM_HELMET 		=
 			add("finallium_helmet",
-					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.HEAD, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.HEAD, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_CHESTPLATE 	=
 			add("finallium_chestplate",
-					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.CHEST, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.CHEST, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_LEGGINGS 	=
 			add("finallium_leggings",
-					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.LEGS, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.LEGS, BASE_SETTINGS)
 			);
 	public  final Item FINALLIUM_BOOTS 		=
 			add("finallium_boots",
-					new ArmorItem(ArmorMaterialHelper.FINALLIUM, EquipmentSlot.FEET, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.FEET, BASE_SETTINGS)
 			);
 
     public final Item COBALT_DUST 			= add("cobalt_dust");

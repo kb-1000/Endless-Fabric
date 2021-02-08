@@ -9,7 +9,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public enum ArmorMaterialHelper implements ArmorMaterial {
+public enum EndlessArmorMaterials implements ArmorMaterial {
 	// leocth - just what in the ever loving fuck is this
 	FINALLIUM(
 			s -> 1, // TODO balance
@@ -30,7 +30,7 @@ public enum ArmorMaterialHelper implements ArmorMaterial {
 	private final float knockbackResistance;
 	private final Supplier<Ingredient> repairIngredientSupplier;
 
-	ArmorMaterialHelper(ToIntFunction<EquipmentSlot> durabilityFunction, ToIntFunction<EquipmentSlot> protectionFunction, int enchantability, SoundEvent equipSound, String name, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
+	EndlessArmorMaterials(ToIntFunction<EquipmentSlot> durabilityFunction, ToIntFunction<EquipmentSlot> protectionFunction, int enchantability, SoundEvent equipSound, String name, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
 		this.durabilityFunction = durabilityFunction;
 		this.protectionFunction = protectionFunction;
 		this.enchantability = enchantability;

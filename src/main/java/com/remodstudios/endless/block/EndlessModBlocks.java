@@ -1,8 +1,8 @@
 package com.remodstudios.endless.block;
 
 import com.remodstudios.endless.Endless;
-import com.remodstudios.endless.datagen.ItemlessBlockGenerator;
 import com.remodstudios.yarnandneedles.blocks.BlockRegistry;
+import com.remodstudios.yarnandneedles.datagen.ResourceGenerators;
 import com.swordglowsblue.artifice.api.util.Processor;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -36,7 +36,7 @@ public class EndlessModBlocks extends BlockRegistry {
 			);
     public final Block MOLTEN_TOPAZ =
 			add("molten_topaz",
-				RegistrySettings.of(ItemlessBlockGenerator.INSTANCE),
+				RegistrySettings.of(ResourceGenerators.NO_OP),
 				new MoltenTopazFluidBlock(FabricBlockSettings.copyOf(Blocks.LAVA))
 			);
     public final Block FLUID_CAULDRON =
