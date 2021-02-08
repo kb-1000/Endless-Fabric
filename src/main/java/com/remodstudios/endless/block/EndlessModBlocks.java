@@ -1,6 +1,7 @@
 package com.remodstudios.endless.block;
 
 import com.remodstudios.endless.Endless;
+import com.remodstudios.endless.datagen.CoveredEndStoneBlockGenerator;
 import com.remodstudios.yarnandneedles.blocks.BlockRegistry;
 import com.remodstudios.yarnandneedles.datagen.ResourceGenerators;
 import com.swordglowsblue.artifice.api.util.Processor;
@@ -47,9 +48,35 @@ public class EndlessModBlocks extends BlockRegistry {
     public final Block BEACON_OF_UNDYING =
 			add("beacon_of_undying", new BeaconOfUndyingBlock(FabricBlockSettings.copyOf(Blocks.BEACON)));
     public final Block ASHEN_ENDSTONE =
-			add("ashen_endstone", newStonelike(settings -> settings
-				.luminance(15)
-			));
+			add("ashen_endstone",
+				RegistrySettings.of(CoveredEndStoneBlockGenerator.INSTANCE),
+				newStonelike(settings -> settings
+					.luminance(15)
+				)
+			);
+	public final Block CRYSTILLIUM =
+			add("crystillium",
+				RegistrySettings.of(CoveredEndStoneBlockGenerator.INSTANCE),
+				newStonelike(settings -> settings
+					.luminance(15)
+				)
+			);
+	public final Block PURPUR_GRASS =
+			add("purpur_grass",
+				RegistrySettings.of(CoveredEndStoneBlockGenerator.INSTANCE),
+				newStonelike(settings -> settings
+						.luminance(15)
+				)
+			);
+	public final Block TEALITE =
+			add("tealite",
+				RegistrySettings.of(CoveredEndStoneBlockGenerator.INSTANCE),
+				newStonelike(settings -> settings
+						.luminance(15)
+				)
+			);
+	public final Block RHYOLITE = add("rhyolite", newStonelike());
+	public final Block POLISHED_RHYOLITE = add("polished_rhyolite", newStonelike());
 
 	public EndlessModBlocks() {
 		super(Endless.MOD_ID);

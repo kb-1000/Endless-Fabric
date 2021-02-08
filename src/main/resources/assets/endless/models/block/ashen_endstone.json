@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "top": "endless:block/ashen_endstone_top",
-    "side": "endless:block/ashen_endstone_side",
-    "bottom": "minecraft:block/end_stone"
-  }
-}

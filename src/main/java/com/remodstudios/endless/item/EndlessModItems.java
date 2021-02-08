@@ -90,10 +90,15 @@ public class EndlessModItems extends ItemRegistry {
 					new BlockItemGenerator(Endless.id("cauldron/cauldron_base")),
 					EndlessModBlocks.INSTANCE.FLUID_CAULDRON
 			);
-	public final BlockItem ASHEN_ENDSTONE = addBlockItem("ashen_endstone", EndlessModBlocks.INSTANCE.ASHEN_ENDSTONE);
 	public final BlockItem COBALT_ORE = addBlockItem("cobalt_ore", EndlessModBlocks.INSTANCE.COBALT_ORE);
 	public final BlockItem COBALT_BLOCK = addBlockItem("cobalt_block", EndlessModBlocks.INSTANCE.COBALT_BLOCK);
 	public final BlockItem BEACON_OF_UNDYING = addBlockItem("beacon_of_undying", EndlessModBlocks.INSTANCE.BEACON_OF_UNDYING);
+	public final BlockItem ASHEN_ENDSTONE = addBlockItem("ashen_endstone", EndlessModBlocks.INSTANCE.ASHEN_ENDSTONE);
+	public final BlockItem CRYSTILLIUM = addBlockItem("crystillium", EndlessModBlocks.INSTANCE.CRYSTILLIUM);
+	public final BlockItem PURPUR_GRASS = addBlockItem("purpur_grass", EndlessModBlocks.INSTANCE.PURPUR_GRASS);
+	public final BlockItem TEALITE = addBlockItem("tealite", EndlessModBlocks.INSTANCE.TEALITE);
+	public final BlockItem RHYOLITE = addBlockItem("rhyolite", EndlessModBlocks.INSTANCE.RHYOLITE);
+	public final BlockItem POLISHED_RHYOLITE = addBlockItem("polished_rhyolite", EndlessModBlocks.INSTANCE.POLISHED_RHYOLITE);
 
 	//endregion
 
