@@ -3,17 +3,18 @@ package com.remodstudios.endless.item;
 import com.remodstudios.endless.Endless;
 import com.remodstudios.endless.block.EndlessModBlocks;
 import com.remodstudios.endless.fluid.EndlessModFluids;
-import com.remodstudios.yarnandneedles.datagen.ResourceGenerator;
+import com.remodstudios.yarnandneedles.datagen.ResourceGenerators;
 import com.remodstudios.yarnandneedles.datagen.generators.item.BlockItemGenerator;
-import com.remodstudios.yarnandneedles.datagen.generators.item.SimpleItemGenerator;
-import com.remodstudios.yarnandneedles.items.*;
+import com.remodstudios.yarnandneedles.items.ItemRegistry;
+import com.remodstudios.yarnandneedles.items.ModAxeItem;
+import com.remodstudios.yarnandneedles.items.ModHoeItem;
+import com.remodstudios.yarnandneedles.items.ModPickaxeItem;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
 
 @SuppressWarnings("unused")
 public class EndlessModItems extends ItemRegistry {
@@ -31,27 +32,25 @@ public class EndlessModItems extends ItemRegistry {
     public final Item TOPAZ_GEM 			= add("topaz_gem");
     public final Item FINALLIUM_SHARD 		= add("finallium_shard");
 
-	//TODO: move to YNN? - leocth
-	private final ResourceGenerator HANDHELD = new SimpleItemGenerator(new Identifier("item/handheld"));
 	public final Item FINALLIUM_SWORD
 			= add("finallium_sword",
-					HANDHELD,
+					ResourceGenerators.HANDHELD_ITEM,
 					new SwordItem(EndlessToolMaterials.FINALLIUM, 3, -2.4F, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_SHOVEL 		=
-			add("finallium_shovel", HANDHELD,
+			add("finallium_shovel", ResourceGenerators.HANDHELD_ITEM,
 					new ShovelItem(EndlessToolMaterials.FINALLIUM, 1.5f, -3f, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_PICKAXE 	=
-			add("finallium_pickaxe", HANDHELD,
+			add("finallium_pickaxe", ResourceGenerators.HANDHELD_ITEM,
 					new ModPickaxeItem(EndlessToolMaterials.FINALLIUM, 1, -2.8f, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_AXE 		=
-			add("finallium_axe", HANDHELD,
+			add("finallium_axe", ResourceGenerators.HANDHELD_ITEM,
 					new ModAxeItem(EndlessToolMaterials.FINALLIUM, 6.0F, -3.1F, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_HOE 		=
-			add("finallium_hoe", HANDHELD,
+			add("finallium_hoe", ResourceGenerators.HANDHELD_ITEM,
 					new ModHoeItem(EndlessToolMaterials.FINALLIUM, -2, -1.0F, BASE_SETTINGS)
 			);
 	public final Item FINALLIUM_HELMET 		=
