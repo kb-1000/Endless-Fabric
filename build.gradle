@@ -33,8 +33,9 @@ dependencies {
 		exclude module: 'fabric-api'
 	}
 	 */
-	modImplementation "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version:dev"
-	include "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version:dev"
+
+	modApi "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version"
+	include "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version"
 }
 
 processResources {
