@@ -72,6 +72,10 @@ public class EndlessModItems extends ItemRegistry {
 
     public final Item COBALT_DUST 			= add("cobalt_dust");
 	public final Item COBALT_INGOT 			= add("cobalt_ingot");
+
+	// "fewd" - LePichu
+	public final Item Papaya 				= add("papaya", new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(5).snack().build())));
+
 	// hidden from item group :yeef:
 	public final Item MOLTEN_TOPAZ_BUCKET =
 			add("molten_topaz_bucket",
