@@ -70,8 +70,8 @@ public class EndlessModItems extends ItemRegistry {
 			add("finallium_boots",
 					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.FEET, BASE_SETTINGS)
 			);
-
-    public final Item COBALT_DUST 			= add("cobalt_dust");
+	
+	public final Item COBALT_DUST 			= add("cobalt_dust");
 	public final Item COBALT_INGOT 			= add("cobalt_ingot");
 	public final Item COBALT_MAGNET			= add("cobalt_magnet", new CobaltMagnetItem(ToolMaterials.IRON, new Item.Settings().maxCount(1).maxDamage(128)));
 

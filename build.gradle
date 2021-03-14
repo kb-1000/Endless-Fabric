@@ -34,8 +34,8 @@ dependencies {
 	}
 	 */
 
-	modApi "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version"
-	include "com.github.ReMod-Studios:Yarn-And-Needles:$ynn_version"
+	modApi "com.github.ReMod-Studios:yarn-and-needles:$ynn_version"
+	include "com.github.ReMod-Studios:yarn-and-needles:$ynn_version"
 }
 
 processResources {
