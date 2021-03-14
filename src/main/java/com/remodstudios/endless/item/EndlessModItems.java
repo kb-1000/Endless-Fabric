@@ -28,7 +28,8 @@ public class EndlessModItems extends ItemRegistry {
 	);
 
 	//region Item declarations
-	private final FabricItemSettings BASE_SETTINGS = new FabricItemSettings().group(GROUP);
+	private final FabricItemSettings BASE_SETTINGS = new FabricItemSettings().group(GROUP).maxCount(64);
+	private final FabricItemSettings TOOL_SETTINGS = new FabricItemSettings().group(GROUP).maxCount(1);
 
     public final Item TOPAZ_GEM 			= add("topaz_gem");
     public final Item FINALLIUM_SHARD 		= add("finallium_shard");
@@ -36,39 +37,39 @@ public class EndlessModItems extends ItemRegistry {
 	public final Item FINALLIUM_SWORD
 			= add("finallium_sword",
 					ResourceGenerators.HANDHELD_ITEM,
-					new SwordItem(EndlessToolMaterials.FINALLIUM, 3, -2.4F, BASE_SETTINGS)
+					new SwordItem(EndlessToolMaterials.FINALLIUM, 3, -2.4F, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_SHOVEL 		=
 			add("finallium_shovel", ResourceGenerators.HANDHELD_ITEM,
-					new ShovelItem(EndlessToolMaterials.FINALLIUM, 1.5f, -3f, BASE_SETTINGS)
+					new ShovelItem(EndlessToolMaterials.FINALLIUM, 1.5f, -3f, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_PICKAXE 	=
 			add("finallium_pickaxe", ResourceGenerators.HANDHELD_ITEM,
-					new ModPickaxeItem(EndlessToolMaterials.FINALLIUM, 1, -2.8f, BASE_SETTINGS)
+					new ModPickaxeItem(EndlessToolMaterials.FINALLIUM, 1, -2.8f, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_AXE 		=
 			add("finallium_axe", ResourceGenerators.HANDHELD_ITEM,
-					new ModAxeItem(EndlessToolMaterials.FINALLIUM, 6.0F, -3.1F, BASE_SETTINGS)
+					new ModAxeItem(EndlessToolMaterials.FINALLIUM, 6.0F, -3.1F, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_HOE 		=
 			add("finallium_hoe", ResourceGenerators.HANDHELD_ITEM,
-					new ModHoeItem(EndlessToolMaterials.FINALLIUM, -2, -1.0F, BASE_SETTINGS)
+					new ModHoeItem(EndlessToolMaterials.FINALLIUM, -2, -1.0F, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_HELMET 		=
 			add("finallium_helmet",
-					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.HEAD, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.HEAD, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_CHESTPLATE 	=
 			add("finallium_chestplate",
-					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.CHEST, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.CHEST, TOOL_SETTINGS)
 			);
 	public final Item FINALLIUM_LEGGINGS 	=
 			add("finallium_leggings",
-					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.LEGS, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.LEGS, TOOL_SETTINGS)
 			);
 	public  final Item FINALLIUM_BOOTS 		=
 			add("finallium_boots",
-					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.FEET, BASE_SETTINGS)
+					new ArmorItem(EndlessArmorMaterials.FINALLIUM, EquipmentSlot.FEET, TOOL_SETTINGS)
 			);
 	
 	public final Item COBALT_DUST 			= add("cobalt_dust");
