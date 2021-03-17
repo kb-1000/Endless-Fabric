@@ -73,11 +73,10 @@ public class EndlessModItems extends ItemRegistry {
 			);
 	
 	public final Item COBALT_DUST 			= add("cobalt_dust");
-	public final Item COBALT_INGOT 			= add("cobalt_ingot");
 	public final Item COBALT_MAGNET			= add("cobalt_magnet", new CobaltMagnetItem(ToolMaterials.IRON, new Item.Settings().maxCount(1).maxDamage(128)));
 
 	// "fewd" - LePichu
-	public final Item Papaya 				= add("papaya", new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(5).snack().build())));
+	public final Item PAPAYA 				= add("papaya", new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(5).snack().build())));
 
 	// "misc stuff because yes" - LePichu
 	public final Item MUSIC_TEST 			= add("test", new RecordItem(11, SoundEvents.MUSIC_DISC_11, new Item.Settings().group(GROUP).maxCount(1)));
