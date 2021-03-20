@@ -20,8 +20,9 @@ public class EndlessModBlocks extends BlockRegistry {
 	public final Block TOPAZ_BLOCK = add("topaz_block", newStonelike());
     public final Block FINALLIUM_ORE = add("finallium_ore", newStonelike());
 	public final Block FINALLIUM_BLOCK = add("finallium_block", newStonelike());
-	public final Block COBALT_ORE = add("cobalt_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
-	public final Block COBALT_BLOCK = add("cobalt_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+	public final Block COBALT_ORE = add("cobalt_ore", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_ORE)));
+	public final Block COBALT_BLOCK = add("cobalt_block", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_BLOCK)));
+	public final Block COBALT_LAMP = add("cobalt_lamp", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP)));
     public final Block RUSTED_IRON_BLOCK =
 			add("rusted_iron_block", new Block(
 				FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)

@@ -100,6 +100,7 @@ public class EndlessModItems extends ItemRegistry {
 			);
 	public final BlockItem COBALT_ORE = addBlockItem("cobalt_ore", EndlessModBlocks.INSTANCE.COBALT_ORE);
 	public final BlockItem COBALT_BLOCK = addBlockItem("cobalt_block", EndlessModBlocks.INSTANCE.COBALT_BLOCK);
+	public final BlockItem COBALT_LAMP = addBlockItem("cobalt_lamp", EndlessModBlocks.INSTANCE.COBALT_LAMP);
 	public final BlockItem BEACON_OF_UNDYING = addBlockItem("beacon_of_undying", EndlessModBlocks.INSTANCE.BEACON_OF_UNDYING);
 	public final BlockItem ASHEN_ENDSTONE = addBlockItem("ashen_endstone", EndlessModBlocks.INSTANCE.ASHEN_ENDSTONE);
 	public final BlockItem CRYSTILLIUM = addBlockItem("crystillium", EndlessModBlocks.INSTANCE.CRYSTILLIUM);
@@ -107,6 +108,8 @@ public class EndlessModItems extends ItemRegistry {
 	public final BlockItem TEALITE = addBlockItem("tealite", EndlessModBlocks.INSTANCE.TEALITE);
 	public final BlockItem RHYOLITE = addBlockItem("rhyolite", EndlessModBlocks.INSTANCE.RHYOLITE);
 	public final BlockItem POLISHED_RHYOLITE = addBlockItem("polished_rhyolite", EndlessModBlocks.INSTANCE.POLISHED_RHYOLITE);
+
+
 
 	//endregion
 

@@ -7,7 +7,6 @@ import com.remodstudios.endless.item.EndlessModItems;
 import com.remodstudios.endless.world.feature.EndlessModFeatures;
 import com.swordglowsblue.artifice.api.Artifice;
 import net.minecraft.util.Identifier;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
