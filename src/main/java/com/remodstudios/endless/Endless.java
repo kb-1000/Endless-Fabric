@@ -2,7 +2,6 @@ package com.remodstudios.endless;
 
 import com.remodstudios.endless.block.EndlessModBlocks;
 import com.remodstudios.endless.block.entity.EndlessModBlockEntityTypes;
-import com.remodstudios.endless.fluid.EndlessModFluids;
 import com.remodstudios.endless.item.EndlessModItems;
 import com.remodstudios.endless.world.feature.EndlessModFeatures;
 import com.swordglowsblue.artifice.api.Artifice;
@@ -26,7 +25,6 @@ public class Endless implements ModInitializer {
         EndlessModBlocks.INSTANCE.init();
 		EndlessModBlockEntityTypes.init();
         EndlessModFeatures.init();
-		EndlessModFluids.init();
 
 		Artifice.registerDataPack(id("artifice_rp"), pack -> {
 			EndlessModItems.INSTANCE.generateData(pack);

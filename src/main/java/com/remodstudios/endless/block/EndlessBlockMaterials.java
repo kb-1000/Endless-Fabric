@@ -5,6 +5,6 @@ import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 
 public final class EndlessBlockMaterials {
-	public static final Material PHAZED_VOID =
+	public static final Material PHASED_VOID =
 		new FabricMaterialBuilder(MapColor.BLUE).notSolid().allowsMovement().build();
 }

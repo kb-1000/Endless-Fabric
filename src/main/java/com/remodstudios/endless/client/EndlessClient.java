@@ -11,8 +11,6 @@ import java.io.IOException;
 public class EndlessClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-		FluidRenderHelper.initAll();
-
 		Artifice.registerAssetPack(Endless.id("artifice_rp"), pack -> {
 			EndlessModItems.INSTANCE.generateAssets(pack);
 			EndlessModBlocks.INSTANCE.generateAssets(pack);
