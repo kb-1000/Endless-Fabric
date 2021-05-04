@@ -21,6 +21,9 @@ public class EndlessModBlocks extends BlockRegistry {
 		super(Endless.MOD_ID);
 	}
 
+	public final Block TOPAZ_ORE = add("topaz_ore", newStonelike());
+	public final Block FINALLIUM_ORE = add("finallium_ore", newStonelike());
+	// FIXME create proper resource generator for beacon -ADCLeo
 	public final Block BEACON_OF_UNDYING = add("beacon_of_undying",
 			RegistrySettings.of(ResourceGenerators.SIMPLE_BLOCK, RenderLayer.getCutout()),
 			newStonelike());
