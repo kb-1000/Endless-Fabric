@@ -9,6 +9,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.apache.logging.log4j.Level;
 
 public class EndlessModBlockEntityTypes {
 	public static final BlockEntityType<BeaconOfUndyingBlockEntity> BEACON_OF_UNDYING =

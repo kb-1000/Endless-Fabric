@@ -1,7 +1,6 @@
 package com.remodstudios.endless.block;
 
 import com.remodstudios.endless.Endless;
-import com.remodstudios.endless.datagen.CoveredEndStoneBlockGenerator;
 import com.remodstudios.yarnandneedles.blocks.BlockRegistry;
 import com.remodstudios.yarnandneedles.datagen.ResourceGenerators;
 import com.swordglowsblue.artifice.api.util.Processor;
@@ -9,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
 
 @SuppressWarnings("unused")
@@ -20,6 +20,10 @@ public class EndlessModBlocks extends BlockRegistry {
 	public EndlessModBlocks() {
 		super(Endless.MOD_ID);
 	}
+
+	public final Block BEACON_OF_UNDYING = add("beacon_of_undying",
+			RegistrySettings.of(ResourceGenerators.SIMPLE_BLOCK, RenderLayer.getCutout()),
+			newStonelike());
 
 	//endregion
 	private static Block newStonelike() {

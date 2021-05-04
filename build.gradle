@@ -16,9 +16,12 @@ repositories {
 		url = "https://maven.terraformersmc.com/"
 	}
 	maven { url 'https://jitpack.io' }
+	/* FIXME Bintray is dead for good -ADCLeo
     maven {
         url = "https://dl.bintray.com/natanfudge/libs/"
     }
+	 */
+	mavenLocal() // temp workaround for ^ being dead -ADCLeo
 }
 
 dependencies {
@@ -33,8 +36,17 @@ dependencies {
 	}
 	 */
 
-	modApi "com.github.ReMod-Studios:yarn-and-needles:$ynn_version"
-	include "com.github.ReMod-Studios:yarn-and-needles:$ynn_version"
+	/* FIXME YaN is unusable until the Artifice situation is handled - ADCLeo */
+	/* workaround is having Artifice in mavenLocal */
+	modApi ("com.github.ReMod-Studios:yarn-and-needles:${project.ynn_version}") {
+		exclude module: 'artifice'
+	}
+	include ("com.github.ReMod-Studios:yarn-and-needles:${project.ynn_version}") {
+		exclude module: 'artifice'
+	}
+
+	modApi "com.lettuce.fudge:artifice:+"
+	include "com.lettuce.fudge:artifice:+"
 }
 
 processResources {

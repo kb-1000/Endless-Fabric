@@ -1,28 +1,10 @@
 package com.remodstudios.endless.world.feature;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-
-import com.google.common.collect.ImmutableList;
 import com.remodstudios.endless.Endless;
-import com.remodstudios.endless.block.EndlessModBlocks;
-import com.remodstudios.endless.mixin.GenerationSettingsAccessor;
-
-import net.minecraft.block.Blocks;
-import net.minecraft.structure.rule.BlockMatchRuleTest;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import org.apache.logging.log4j.Level;
 
 public class EndlessModFeatures {
+	/* FIXME refactor to use FAPI Biome API -ADCLeo
     public static final ConfiguredFeature<?, ?> TOPAZ_ORE = register("topaz_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.INSTANCE.TOPAZ_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
     public static final ConfiguredFeature<?, ?> FINALLIUM_ORE = register("finallium_ore", Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), EndlessModBlocks.INSTANCE.FINALLIUM_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 100))).repeat(6));
 
@@ -54,4 +36,10 @@ public class EndlessModFeatures {
                                    ((GenerationSettingsAccessor) biome.getGenerationSettings()).setFeatures(features);
                                });
     }
+	 */
+
+	// temp init method
+	public static void init() {
+		Endless.log(Level.WARN, "World generation features are NYI!");
+	}
 }

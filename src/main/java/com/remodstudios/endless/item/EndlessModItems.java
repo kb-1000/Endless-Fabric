@@ -1,21 +1,14 @@
 package com.remodstudios.endless.item;
 
 import com.remodstudios.endless.Endless;
-import com.remodstudios.endless.block.EndlessModBlocks;
-import com.remodstudios.endless.fluid.EndlessModFluids;
-import com.remodstudios.yarnandneedles.datagen.ResourceGenerators;
-import com.remodstudios.yarnandneedles.datagen.generators.item.BlockItemGenerator;
 import com.remodstudios.yarnandneedles.items.ItemRegistry;
-import com.remodstudios.yarnandneedles.items.ModAxeItem;
-import com.remodstudios.yarnandneedles.items.ModHoeItem;
-import com.remodstudios.yarnandneedles.items.ModPickaxeItem;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.*;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tag.Tag;
 
 @SuppressWarnings("unused")
