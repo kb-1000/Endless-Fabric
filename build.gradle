@@ -16,12 +16,9 @@ repositories {
 		url = "https://maven.terraformersmc.com/"
 	}
 	maven { url 'https://jitpack.io' }
-	/* FIXME Bintray is dead for good -ADCLeo
-    maven {
-        url = "https://dl.bintray.com/natanfudge/libs/"
-    }
-	 */
-	mavenLocal() // temp workaround for ^ being dead -ADCLeo
+	maven {
+		url = "https://maven.dblsaiko.net/"
+	}
 }
 
 dependencies {
@@ -45,8 +42,8 @@ dependencies {
 		exclude module: 'artifice'
 	}
 
-	modApi "com.lettuce.fudge:artifice:+"
-	include "com.lettuce.fudge:artifice:+"
+	modApi "de.kb1000:artifice:0.15.5+21w18a"
+	include "de.kb1000:artifice:0.15.5+21w18a"
 }
 
 processResources {
